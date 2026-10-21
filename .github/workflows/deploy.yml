@@ -21,15 +21,19 @@ jobs:
           port: 22
           script_stop: true
           script: |
-            echo "── Starting Automated Deployment for SGS Monorepo ──"
+            echo "🚀 Starting Automated Deployment for SGS Monorepo 🚀"
             DEPLOY_DIR="/var/www/SGS"
+            REPO_URL="https://github.com/${{ github.repository }}.git"
 
             if [ ! -d "$DEPLOY_DIR" ]; then
               echo "Directory $DEPLOY_DIR does not exist. Cloning repository..."
-              git clone https://github.com/jawaleritesh1/sanskar.git "$DEPLOY_DIR"
+              git clone "$REPO_URL" "$DEPLOY_DIR"
             fi
 
             cd "$DEPLOY_DIR"
+            echo "Ensuring remote points to ${{ github.repository }}..."
+            git remote set-url origin "$REPO_URL"
+
             echo "Fetching latest changes from main branch..."
             git fetch origin main
             git reset --hard origin/main
