@@ -298,19 +298,21 @@ export const CareersView: React.FC<CareersViewProps> = ({ onNavigate }) => {
             ))}
           </div>
 
-          {/* General Application Inquiries */}
+          {/* Proactive Candidate Section */}
           <div className="mt-8 p-6 sm:p-8 rounded-2xl bg-[#F5FAFF] border border-slate-200 text-center max-w-2xl mx-auto space-y-3 shadow-md text-[#141414]">
-            <h3 className="text-xl font-heading font-bold text-[#141414]">Don't see your exact role?</h3>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              We are always eager to connect with outstanding growth strategists, full-stack engineers, and brand designers who resonate with our standard of excellence.
+            <h3 className="text-xl font-heading font-bold text-[#141414]">Don't see your role?</h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans">
+              We're always interested in meeting people who can help us build better growth and technology systems.
             </p>
-            <a
-              href="mailto:careers@sanskargrowthsolutions.com"
-              className="inline-flex items-center gap-1 text-xs font-bold text-[#2033FF] hover:text-[#0F1B64] hover:underline pt-1"
-            >
-              <span>Send your CV and portfolio to careers@sanskargrowthsolutions.com</span>
-              <ArrowRight size={13} />
-            </a>
+            <div className="pt-2">
+              <a
+                href="mailto:careers@sanskargrowthsolutions.com?subject=Career%20Profile%20Submission"
+                className="inline-flex items-center gap-2 px-7 py-3 rounded-xl bg-[#0F1B64] hover:bg-[#2033FF] text-[#AFEB00] text-xs font-bold transition-all shadow-md group/btn"
+              >
+                <span>Send Your Profile</span>
+                <ArrowRight size={13} className="text-[#AFEB00] transition-transform duration-300 group-hover/btn:translate-x-1" />
+              </a>
+            </div>
           </div>
 
         </div>

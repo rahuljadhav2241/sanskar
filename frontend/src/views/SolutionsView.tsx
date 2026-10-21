@@ -80,25 +80,24 @@ export const SolutionsView: React.FC<SolutionsViewProps> = ({
               <div className="flex items-center gap-3">
                 <span className="h-[2px] w-8 bg-[#AFEB00]" />
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#AFEB00] font-mono">
-                  Engineered Growth Capabilities
+                  Business-Ready Growth Systems
                 </span>
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold tracking-tight text-white leading-[1.08]">
-                Integrated Digital Systems <br />
-                To{" "}
+                Growth Solutions Built Around <br />
                 <span className="font-heading font-bold text-[#AFEB00]">
-                  Attract, Convert &amp; Scale
+                  Your Business.
                 </span>
               </h1>
 
               <p className="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
-                We reject disconnected agency silos. We architect synchronized growth operations combining high-yield acquisition, sub-second web platforms, category brand authority, and automated CRM pipelines into one sovereign layer.
+                From demand generation to technology and automation, SGS brings the critical pieces of business growth together under one strategic partner.
               </p>
 
               <div className="font-heading text-base sm:text-lg text-slate-200 font-semibold tracking-tight flex items-center gap-2">
                 <span className="h-0.5 w-6 bg-[#2033FF]" />
-                <span>Five synchronized capabilities. One accountable partner.</span>
+                <span>Strategy • Technology • Digital Growth • Automation</span>
               </div>
 
               <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -106,7 +105,7 @@ export const SolutionsView: React.FC<SolutionsViewProps> = ({
                   onClick={() => onOpenProjectModal(selectedServiceSlug)}
                   className="px-8 py-3.5 rounded-xl bg-[#AFEB00] hover:bg-[#9CD100] text-[#0F1B64] text-xs sm:text-sm font-heading font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg shadow-[#AFEB00]/25 transition-all hover:-translate-y-0.5"
                 >
-                  <span>Deploy {currentService.title}</span>
+                  <span>Discuss Your Growth Goals</span>
                   <ArrowRight size={15} />
                 </button>
 
@@ -492,27 +491,27 @@ export const SolutionsView: React.FC<SolutionsViewProps> = ({
           </div>
 
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-bold tracking-tight text-white max-w-3xl mx-auto leading-[1.08]">
-            Ready to Architect Your Enterprise Growth Engine?
+            Ready to Identify Your Next Growth Opportunity?
           </h2>
 
           <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
-            Let's evaluate your commercial bottlenecks and engineer a sovereign system built for lasting scale.
+            Tell us where your business is today, what is holding it back and where you want to go.
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={() => onOpenProjectModal(selectedServiceSlug)}
-              className="px-9 py-4 rounded-xl bg-[#AFEB00] hover:bg-[#9CD100] text-[#0F1B64] text-xs sm:text-sm font-heading font-bold uppercase tracking-wider flex items-center gap-2 shadow-xl shadow-[#AFEB00]/25 transition-transform hover:-translate-y-0.5"
+              className="px-9 py-4 rounded-xl bg-[#AFEB00] hover:bg-[#9CD100] text-[#0F1B64] text-xs sm:text-sm font-heading font-bold uppercase tracking-wider flex items-center gap-2 shadow-xl shadow-[#AFEB00]/25 transition-transform hover:-translate-y-0.5 cursor-pointer"
             >
-              <span>Start a Conversation</span>
+              <span>Start a Growth Conversation</span>
               <ArrowRight size={15} />
             </button>
 
             <button
               onClick={onOpenDiagnostic}
-              className="px-8 py-4 rounded-xl bg-[#0A1245]/80 hover:bg-[#0F1B64] text-white border border-white/20 text-xs sm:text-sm font-heading font-bold uppercase tracking-wider transition-all"
+              className="px-8 py-4 rounded-xl bg-[#0A1245]/80 hover:bg-[#0F1B64] text-white border border-white/20 text-xs sm:text-sm font-heading font-bold uppercase tracking-wider transition-all cursor-pointer"
             >
-              <span>Take Growth Diagnostic</span>
+              <span>Take the Growth Diagnostic</span>
             </button>
           </div>
         </div>

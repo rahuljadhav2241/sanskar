@@ -214,12 +214,16 @@ export const ProjectInitiationModal: React.FC<ProjectInitiationModalProps> = ({
                   onChange={(e) => setSelectedRequirement(e.target.value)}
                   className="w-full px-3.5 py-2.5 text-xs bg-[#0A1245] border border-white/15 rounded-xl text-white focus:outline-none focus:border-[#AFEB00]"
                 >
-                  <option value="digital-growth" className="bg-[#0A1245] text-white">Digital Growth &amp; Paid Acquisition</option>
-                  <option value="technology" className="bg-[#0A1245] text-white">Modern Web &amp; Custom Software</option>
-                  <option value="brand-creative" className="bg-[#0A1245] text-white">Brand Authority &amp; Creative Direction</option>
-                  <option value="business-media" className="bg-[#0A1245] text-white">Business Media &amp; PR Authority</option>
-                  <option value="business-consulting" className="bg-[#0A1245] text-white">Strategic Growth Consulting</option>
-                  <option value="all-in-one" className="bg-[#0A1245] text-white">Complete Unified Operating Layer</option>
+                  <option value="digital-marketing" className="bg-[#0A1245] text-white">Digital Marketing</option>
+                  <option value="lead-generation" className="bg-[#0A1245] text-white">Lead Generation</option>
+                  <option value="website" className="bg-[#0A1245] text-white">Website &amp; Web Platform</option>
+                  <option value="software-saas" className="bg-[#0A1245] text-white">Software / SaaS Development</option>
+                  <option value="crm" className="bg-[#0A1245] text-white">CRM &amp; Sales Pipelines</option>
+                  <option value="automation" className="bg-[#0A1245] text-white">Business Automation</option>
+                  <option value="branding" className="bg-[#0A1245] text-white">Brand Identity &amp; Creative</option>
+                  <option value="business-consulting" className="bg-[#0A1245] text-white">Business Growth Consulting</option>
+                  <option value="digital-transformation" className="bg-[#0A1245] text-white">Digital Transformation</option>
+                  <option value="other" className="bg-[#0A1245] text-white">Other</option>
                 </select>
               </div>
 
@@ -251,22 +255,22 @@ export const ProjectInitiationModal: React.FC<ProjectInitiationModalProps> = ({
               {errors.consent && <p className="text-[11px] text-rose-400">{errors.consent}</p>}
 
               {/* Submit Button */}
-              <div className="pt-3 border-t border-white/10 flex items-center justify-between">
+              <div className="pt-3 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <span className="text-[11px] text-slate-400 flex items-center gap-1 font-mono">
                   <ShieldCheck size={14} className="text-[#AFEB00]" />
-                  Confidential &amp; NDA Protected
+                  Your project information is treated as confidential.
                 </span>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="px-8 py-3.5 rounded-xl bg-[#AFEB00] hover:bg-[#9CD100] text-[#141414] text-xs font-heading font-bold flex items-center gap-2 shadow-lg shadow-[#AFEB00]/25 transition-all hover:-translate-y-0.5 active:scale-95 disabled:opacity-50 cursor-pointer"
+                  className="px-8 py-3.5 rounded-xl bg-[#AFEB00] hover:bg-[#9CD100] text-[#141414] text-xs font-heading font-bold flex items-center justify-center gap-2 shadow-lg shadow-[#AFEB00]/25 transition-all hover:-translate-y-0.5 active:scale-95 disabled:opacity-50 cursor-pointer"
                 >
                   {isSubmitting ? (
                     <span>Submitting Discovery Request...</span>
                   ) : (
                     <>
-                      <span>Submit Project Inquiry</span>
+                      <span>Start a Growth Conversation</span>
                       <ArrowRight size={14} className="text-[#141414]" />
                     </>
                   )}

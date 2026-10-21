@@ -52,7 +52,7 @@ export const InsightsView: React.FC<InsightsViewProps> = ({
   );
   const [copiedLink, setCopiedLink] = useState(false);
 
-  const categories = ['All', 'Marketing', 'Technology', 'Business Growth', 'AI & Automation', 'Branding', 'Digital Transformation'];
+  const categories = ['All', 'Growth', 'Technology', 'Industry', 'SGS Insights'];
 
   const filteredArticles = insightsData.filter((article) => {
     const matchesCategory = selectedCategory === 'All' || article.category === selectedCategory;

@@ -9,12 +9,25 @@ import {
   Cpu,
   Rocket,
   BarChart3,
+  BarChart2,
   ChevronLeft,
   ChevronRight,
   CheckCircle2,
   Target,
   Compass,
   Building2,
+  TrendingUp,
+  Zap,
+  Layers,
+  ShieldCheck,
+  Activity,
+  ArrowUpRight,
+  Users,
+  Laptop,
+  Settings,
+  Database,
+  Clock,
+  FileText
 } from 'lucide-react';
 import { CaseStudy, InsightArticle } from '../types';
 import { SgsBrandMotifsStrip } from '../components/BrandGraphics';
@@ -27,69 +40,140 @@ interface HomeViewProps {
   onSelectArticle?: (article: InsightArticle) => void;
 }
 
-const solutionsList = [
+const problemsList = [
   {
     num: '01',
-    title: 'Digital Growth',
-    slug: 'digital-growth',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80',
-    capabilities: ['Performance Marketing', 'Lead Generation', 'Content & Social', 'Growth Systems'],
+    title: 'Inconsistent Leads',
+    problem: 'Your business depends too heavily on referrals or unpredictable enquiries.',
+    impacts: 'Revenue, Pipeline, Sales Growth',
+    image: '/images/card-funnel-leads-perfect.png',
+    icon: Users,
+    sgsResponse: 'Demand Generation & Performance Marketing',
   },
   {
     num: '02',
-    title: 'Technology Solutions',
-    slug: 'technology',
-    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80',
-    capabilities: ['Web & App Development', 'Custom Software', 'Automation & Integration', 'AI & Emerging Tech'],
+    title: "Leads Don't Convert",
+    problem: 'Enquiries come in, but follow-ups, qualification and sales tracking are inconsistent.',
+    impacts: 'Sales Process, CRM, Conversions',
+    image: '/images/card-magnet-leads-perfect.png',
+    icon: BarChart3,
+    sgsResponse: 'CRM, Lead Management & Conversion Systems',
   },
   {
     num: '03',
-    title: 'Brand & Creative',
-    slug: 'brand-creative',
-    image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80',
-    capabilities: ['Brand Strategy', 'Visual Identity', 'Content Production', 'Campaigns & Storytelling'],
+    title: 'Weak Digital Presence',
+    problem: "Your website and online presence don't communicate the quality of your business.",
+    impacts: 'Brand, Website, Online Visibility',
+    image: '/images/card-digital-presence-perfect.png',
+    icon: Laptop,
+    sgsResponse: 'Website, Brand & Digital Experience',
   },
   {
     num: '04',
-    title: 'Business Media & Authority',
-    slug: 'business-media',
-    image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80',
-    capabilities: ['The Success World', 'Industry Publications', 'Thought Leadership', 'Editorial & PR'],
+    title: 'Manual Operations',
+    problem: 'Your team spends too much time on repetitive processes.',
+    impacts: 'Time, Productivity, Team Efficiency',
+    image: '/images/card-manual-operations-perfect.png',
+    icon: Settings,
+    sgsResponse: 'Automation & Technology Solutions',
   },
   {
     num: '05',
-    title: 'Business Consulting',
-    slug: 'business-consulting',
-    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80',
-    capabilities: ['Growth Strategy', 'Market Expansion', 'Process & Operations', 'Advisory & Mentorship'],
+    title: 'Disconnected Systems',
+    problem: 'Marketing, sales, customer data and operations work in separate systems.',
+    impacts: 'Data, Systems, Scalable Growth',
+    image: '/images/card-disconnected-systems-perfect.png',
+    icon: Database,
+    sgsResponse: 'Integrated Growth & Technology Architecture',
   },
 ];
 
-const industriesList = [
+const growthStagesList = [
   {
-    title: 'Real Estate & Property',
-    slug: 'real-estate-property',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80',
+    stage: 'ATTRACT',
+    title: 'Generate Demand',
+    slug: 'digital-growth',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80',
+    capabilities: [
+      'Digital Marketing',
+      'Performance Marketing',
+      'SEO',
+      'Social Media',
+      'Content & Creative',
+      'Lead Generation',
+      'Brand Positioning',
+    ],
+    ctaText: 'Explore Digital Growth',
   },
   {
-    title: 'Architecture & Interiors',
-    slug: 'architecture-interiors',
+    stage: 'CONVERT',
+    title: 'Turn Opportunities Into Business',
+    slug: 'technology',
+    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80',
+    capabilities: [
+      'Landing Pages',
+      'Websites',
+      'CRM',
+      'Lead Management',
+      'WhatsApp Automation',
+      'Sales Funnels',
+      'Analytics & Conversion Optimization',
+    ],
+    ctaText: 'Explore Conversion Systems',
+  },
+  {
+    stage: 'SCALE',
+    title: 'Build Systems That Support Growth',
+    slug: 'business-consulting',
+    image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80',
+    capabilities: [
+      'Custom Software',
+      'Business Automation',
+      'SaaS & Portals',
+      'CRM & ERP Solutions',
+      'AI & Automation',
+      'Business Dashboards',
+      'Digital Transformation',
+    ],
+    ctaText: 'Explore Technology Solutions',
+  },
+];
+
+const priorityIndustriesList = [
+  {
+    title: 'Real Estate & Property',
+    slug: 'real-estate',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80',
+    tag: 'Priority 01',
+    cta: 'Build My Real Estate Growth System',
+  },
+  {
+    title: 'Interior & Construction',
+    slug: 'interior-construction',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80',
+    tag: 'Priority 02',
+    cta: 'Build My Interior Growth System',
+  },
+  {
+    title: 'B2B & Manufacturing',
+    slug: 'b2b-manufacturing',
+    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80',
+    tag: 'Priority 03',
+    cta: 'Build My B2B Growth System',
+  },
+  {
+    title: 'Professional Services',
+    slug: 'professional-services',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80',
+    tag: 'Sector Focus',
+    cta: 'Explore Advisory Stack',
   },
   {
     title: 'Technology & SaaS',
     slug: 'technology-saas',
     image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80',
-  },
-  {
-    title: 'Manufacturing & SMEs',
-    slug: 'manufacturing-smes',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80',
-  },
-  {
-    title: 'Professional Services',
-    slug: 'high-ticket-b2b-legal',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80',
+    tag: 'Sector Focus',
+    cta: 'Explore Tech Stack',
   },
 ];
 
@@ -98,15 +182,15 @@ const approachSteps = [
     num: '01',
     phase: 'Phase 01',
     title: 'Discover',
-    desc: 'Deep-dive audit into your business model, customer data, competitors, and growth bottlenecks.',
+    desc: 'Understand your business, customers, challenges and objectives.',
     deliverable: 'Diagnostic & Audit',
     icon: Search,
   },
   {
     num: '02',
     phase: 'Phase 02',
-    title: 'Strategise',
-    desc: 'Architecting a bespoke growth roadmap with clear channel economics, positioning, and KPI milestones.',
+    title: 'Strategize',
+    desc: 'Define the right growth, technology and commercial approach.',
     deliverable: 'Growth Roadmap',
     icon: Lightbulb,
   },
@@ -114,25 +198,61 @@ const approachSteps = [
     num: '03',
     phase: 'Phase 03',
     title: 'Build',
-    desc: 'Engineering high-converting web platforms, automation workflows, and brand creative assets.',
+    desc: 'Develop the required marketing assets, technology and systems.',
     deliverable: 'Platform & Assets',
-    icon: Cpu,
+    icon: Settings,
   },
   {
     num: '04',
     phase: 'Phase 04',
     title: 'Launch',
-    desc: 'Executing precision go-to-market campaigns across search, social, and direct outbound channels.',
-    deliverable: 'Acquisition Funnels',
+    desc: 'Put the system into action and connect the required channels.',
+    deliverable: 'Channel Activation',
     icon: Rocket,
   },
   {
     num: '05',
     phase: 'Phase 05',
-    title: 'Scale',
-    desc: 'Continuous conversion optimization, automated CRM routing, and compounding market expansion.',
-    deliverable: 'Compounding Scale',
+    title: 'Measure',
+    desc: 'Track performance, conversion and business outcomes.',
+    deliverable: 'Attribution & Tracking',
     icon: BarChart3,
+  },
+  {
+    num: '06',
+    phase: 'Phase 06',
+    title: 'Scale',
+    desc: 'Optimize what works and build the next growth layer.',
+    deliverable: 'Compounding Scale',
+    icon: TrendingUp,
+  },
+];
+
+const whySgsPoints = [
+  {
+    num: '01',
+    title: 'Business-First Thinking',
+    desc: 'We start with your business objective—not a predefined service package.',
+  },
+  {
+    num: '02',
+    title: 'Strategy + Technology',
+    desc: 'Marketing, technology and automation work together instead of operating as separate functions.',
+  },
+  {
+    num: '03',
+    title: 'Industry Understanding',
+    desc: 'We design solutions around the realities of your industry and customer journey.',
+  },
+  {
+    num: '04',
+    title: 'Measurable Execution',
+    desc: 'We focus on meaningful commercial outcomes, not vanity metrics.',
+  },
+  {
+    num: '05',
+    title: 'Long-Term Partnership',
+    desc: 'We aim to become a strategic growth partner as your business evolves.',
   },
 ];
 
@@ -140,12 +260,20 @@ const caseStudiesList = [
   {
     id: 'arc-interiors',
     client: 'Raaga Interiors',
-    industry: 'Architecture & Interiors',
-    headline: 'From Local Presence to 3x More Qualified Leads.',
+    industry: 'Interior & Construction',
+    headline: 'From Local Referrals to Predictable High-Value Consultations.',
+    challenge: 'Relied heavily on unpredictable offline architect referrals with no structured homeowner acquisition funnel.',
+    sgsApproach: 'Visual authority portfolio web system, targeted Meta discovery campaigns, and automated intake CRM.',
+    description: 'We helped Raaga Interiors build a complete growth system with website, digital campaigns, CRM and automated follow-ups.',
     metrics: [
-      { value: '3x', label: 'Increase in leads' },
-      { value: '60%', label: 'Lower cost per lead' },
-      { value: '4 Months', label: 'To significant growth' },
+      { value: '3.4x', label: 'Qualified Inquiries', sub: '↑ 240% increase' },
+      { value: '62%', label: 'Lower Cost / Lead', sub: '↓ 62% reduction' },
+      { value: '90 Days', label: 'Time to Scale', sub: 'From setup to measurable results' },
+    ],
+    compactMetrics: [
+      { val: '3.4x', label: 'Inquiries' },
+      { val: '62%', label: 'Lower CPL' },
+      { val: '90 Days', label: 'Time to Scale' },
     ],
     image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=80',
   },
@@ -153,43 +281,68 @@ const caseStudiesList = [
     id: 'apex-realty',
     client: 'Sanskar Realty',
     industry: 'Real Estate & Property',
-    headline: 'Scaling Luxury Real Estate Bookings Across Pune & Mumbai.',
+    headline: 'Scaling Luxury Residential Bookings Across Western India.',
+    challenge: 'Slow response times on generic portals causing lead drop-off and low site-visit conversion.',
+    sgsApproach: 'High-intent search and meta campaigns, responsive project microsite, and sub-2-minute CRM dispatch.',
+    description: 'We engineered high-intent campaigns, high-converting project microsites, and automated sub-2-minute CRM dispatch.',
     metrics: [
-      { value: '₹42 Cr', label: 'Gross booking value' },
-      { value: '4.8x', label: 'Return on ad spend' },
-      { value: '90 Days', label: 'Campaign maturity' },
+      { value: '2.8x', label: 'Qualified Leads', sub: '↑ 180% surge' },
+      { value: '54%', label: 'Lower Cost / Lead', sub: '↓ 54% reduction' },
+      { value: '120 Days', label: 'Sales Pipeline', sub: 'From launch to velocity' },
+    ],
+    compactMetrics: [
+      { val: '2.8x', label: 'Leads' },
+      { val: '54%', label: 'Lower CPL' },
+      { val: '120 Days', label: 'Sales Pipeline' },
     ],
     image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1000&q=80',
   },
   {
-    id: 'technova-saas',
-    client: 'TechNova SaaS',
-    industry: 'Technology & SaaS',
-    headline: 'Modern Product Funnel Generating Global Enterprise Demos.',
+    id: 'novacommerce',
+    client: 'Nova Distribution',
+    industry: 'Distribution & Commerce',
+    headline: 'Digitized B2B Ordering & Automated Procurement Pipelines.',
+    challenge: 'Manual phone and paper catalog workflows resulting in delayed RFQ processing and missed regional accounts.',
+    sgsApproach: 'Modern digital catalog portal, automated RFQ lead distribution, and targeted Google search visibility.',
+    description: 'We digitized regional catalog workflows with an automated RFQ ordering portal and high-velocity B2B commercial outreach.',
     metrics: [
-      { value: '180+', label: 'Enterprise SQLs' },
-      { value: '2.4x', label: 'Demo conversion rate' },
-      { value: '60 Days', label: 'Time to full rollout' },
+      { value: '3.1x', label: 'B2B Inquiries', sub: '↑ 210% increase' },
+      { value: '48%', label: 'Lower Cost / Lead', sub: '↓ 48% reduction' },
+      { value: '90 Days', label: 'Deal Cycle', sub: 'Halved procurement cycle' },
     ],
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80',
+    compactMetrics: [
+      { val: '3.1x', label: 'B2B Inquiries' },
+      { val: '48%', label: 'Lower CPL' },
+      { val: '90 Days', label: 'Deal Cycle' },
+    ],
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80',
   },
   {
-    id: 'sharma-industries',
-    client: 'Sharma Industries',
-    industry: 'Manufacturing & SMEs',
-    headline: 'Automated Lead Routing for Precision Industrial Engineering.',
+    id: 'cleanzo',
+    client: 'Cleanzo',
+    industry: 'Manufacturing',
+    headline: 'High-Velocity Institutional Lead Acquisition & Brand Modernization.',
+    challenge: 'Offline retail distribution saturation with no unified corporate procurement portal.',
+    sgsApproach: 'Custom B2B ordering portal, SEO dominance, and high-velocity digital outreach.',
+    description: 'We modernized industrial presence with verified specs, buyer discovery channels, and automated factory procurement.',
     metrics: [
-      { value: '310%', label: 'Inbound inquiry surge' },
-      { value: '45m', label: 'Average lead response' },
-      { value: '5 Months', label: 'Break-even timeline' },
+      { value: '2.6x', label: 'Website Traffic', sub: '↑ 160% organic lift' },
+      { value: '67%', label: 'Lower Cost / Lead', sub: '↓ 67% reduction' },
+      { value: '3 Months', label: 'Time to Scale', sub: 'B2B Inquiries surge' },
     ],
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80',
+    compactMetrics: [
+      { val: '2.6x', label: 'Website Traffic' },
+      { val: '67%', label: 'Lower CPL' },
+      { val: '3 Months', label: 'B2B Inquiries' },
+    ],
+    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80',
   },
 ];
 
 export const HomeView: React.FC<HomeViewProps> = ({
   onNavigate,
   onOpenProjectModal,
+  onOpenDiagnostic,
 }) => {
   const [activeCaseIdx, setActiveCaseIdx] = useState(0);
   const activeCase = caseStudiesList[activeCaseIdx];
@@ -198,219 +351,315 @@ export const HomeView: React.FC<HomeViewProps> = ({
     <div className="w-full bg-[#F5FAFF] text-[#1A1A1A] font-sans overflow-x-hidden">
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-          01. HERO SECTION (CINEMATIC SKYLINE OFFICE)
+          01. HERO SECTION
       ═══════════════════════════════════════════════════════════════════════════ */}
       <Hero onNavigate={onNavigate} />
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-          02. ABOUT SGS — A GROWTH PARTNER (REDESIGNED)
+          02. TRUST / POSITIONING STRIP (BELOW HERO)
       ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="relative py-16 sm:py-24 bg-gradient-to-b from-[#F5FAFF] via-white to-[#F5FAFF] text-[#1A1A1A] overflow-hidden">
-        {/* Subtle decorative background ambient glow */}
-        <div className="absolute top-0 right-0 w-[450px] h-[450px] rounded-full bg-[#2033FF]/5 blur-[130px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-[#AFEB00]/10 blur-[130px] pointer-events-none" />
+      <section className="py-8 sm:py-10 bg-[#080E32] text-white border-y border-white/10">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+          <div className="mb-6 text-center sm:text-left">
+            <h3 className="text-xl sm:text-2xl font-heading font-bold text-white tracking-tight">
+              One Growth Partner. Multiple Business Growth Levers.
+            </h3>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="p-4 rounded-xl bg-white/5 border border-white/10 space-y-1">
+              <div className="text-xs font-mono font-bold text-[#AFEB00] uppercase tracking-wider">01. Digital Growth</div>
+              <p className="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-sans">
+                Generate visibility, demand and qualified opportunities.
+              </p>
+            </div>
+            <div className="p-4 rounded-xl bg-white/5 border border-white/10 space-y-1">
+              <div className="text-xs font-mono font-bold text-[#2033FF] uppercase tracking-wider">02. Technology</div>
+              <p className="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-sans">
+                Build websites, platforms, CRM and business systems.
+              </p>
+            </div>
+            <div className="p-4 rounded-xl bg-white/5 border border-white/10 space-y-1">
+              <div className="text-xs font-mono font-bold text-[#AFEB00] uppercase tracking-wider">03. Automation</div>
+              <p className="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-sans">
+                Reduce manual work and improve operational efficiency.
+              </p>
+            </div>
+            <div className="p-4 rounded-xl bg-white/5 border border-white/10 space-y-1">
+              <div className="text-xs font-mono font-bold text-[#2033FF] uppercase tracking-wider">04. Strategy</div>
+              <p className="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-sans">
+                Connect marketing, sales and technology to business objectives.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 relative z-10">
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          03. THE PROBLEMS WE SOLVE — WHERE IS YOUR BUSINESS LOSING GROWTH?
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="relative pt-8 sm:pt-10 lg:pt-10 pb-6 sm:pb-8 lg:pb-8 bg-[#F8FAFC] text-[#141414] border-b border-slate-200 overflow-hidden">
+        {/* Full-Section Background Scene: Image spans the entire section with corner emphasized */}
+        <div className="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden">
+          <img
+            src="/images/diagnostic-businessman-hires.png"
+            alt=""
+            className="w-full h-full object-cover object-left-bottom"
+          />
+          {/* Smooth overlay: bottom-left corner remains clear and vivid,
+              while the rest softly blends into the #F8FAFC section background */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'radial-gradient(ellipse 70% 80% at 0% 100%, transparent 0%, transparent 35%, rgba(248, 250, 252, 0.45) 55%, rgba(248, 250, 252, 0.9) 75%, #F8FAFC 95%)',
+            }}
+          />
+        </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
-
-            {/* Left Narrative Column (Span 6) */}
-            <div className="lg:col-span-6 space-y-6 flex flex-col justify-between">
-              <div className="space-y-6">
-
-                {/* Eyebrow Tag */}
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#2033FF]/10 border border-[#2033FF]/20 text-[#2033FF]">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#2033FF]" />
-                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider">
-                    About Sanskar Growth Solutions
-                  </span>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
+            {/* Left Column: Title, Benefits & Open View to the Exposed Background Scene */}
+            <div className="lg:col-span-4 flex flex-col justify-between h-full space-y-4">
+              <div className="space-y-3 relative z-10">
+                {/* Pill Tag */}
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#EAF7D3] border border-[#D4F09B] text-slate-900 text-[10px] font-mono font-bold uppercase tracking-wider">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#84CC16]" />
+                  <span>Business Growth Diagnostic</span>
                 </div>
 
                 {/* Headline */}
-                <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-heading font-bold leading-[1.12] text-[#080E32] tracking-tight">
-                  More Than a Service Provider.<br />
-                  <span className="text-[#2033FF]">A Strategic Growth Partner.</span>
+                <h2 className="text-3xl sm:text-[38px] lg:text-[42px] font-heading font-black leading-[1.05] text-[#080E32] tracking-tight">
+                  Where Is Your<br />
+                  Business Losing<br />
+                  <span className="text-[#84CC16]">Growth?</span>
                 </h2>
 
-                {/* Sub-narrative */}
-                <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-sans max-w-xl">
-                  Sanskar Growth Solutions is a modern Indian company that brings together strategy, technology, marketing, creative, and business advisory to help enterprises and growing businesses achieve measurable, long-term compounding growth.
+                {/* Paragraph */}
+                <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-sans max-w-[340px]">
+                  Most businesses don't need more services. They need the right systems working together. Identify your biggest growth bottleneck in seconds.
                 </p>
 
-                {/* Slogan Banner */}
-                <div className="p-3.5 sm:p-4 rounded-xl bg-gradient-to-r from-[#080E32] to-[#0F1B64] text-white flex items-center justify-between gap-4 shadow-md">
-                  <div className="flex items-center gap-3">
-                    <span className="h-2 w-2 rounded-full bg-[#AFEB00] animate-pulse" />
-                    <span className="font-heading text-sm sm:text-base font-bold tracking-tight">
-                      Built for a Brighter Business India
-                    </span>
-                  </div>
-                  <span className="text-[10px] font-mono uppercase font-bold text-[#AFEB00] px-2 py-0.5 rounded bg-white/10 border border-white/10 shrink-0">
-                    National Mission
-                  </span>
-                </div>
-
-                {/* Purpose & Vision Cards — Balanced 2-Card Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
-                  {/* Purpose Card */}
-                  <div className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:border-[#2033FF]/40 hover:shadow-md transition-all group">
-                    <div className="flex items-center gap-2.5 mb-2.5">
-                      <div className="w-8 h-8 rounded-lg bg-[#2033FF]/10 text-[#2033FF] flex items-center justify-center group-hover:bg-[#2033FF] group-hover:text-white transition-colors">
-                        <Target size={16} />
-                      </div>
-                      <span className="text-xs font-heading font-bold uppercase tracking-wider text-[#2033FF]">
-                        Our Purpose
-                      </span>
+                {/* 3 Core Value Props */}
+                <div className="space-y-2 pt-0.5">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-7 h-7 rounded-full bg-white border border-slate-200/80 flex items-center justify-center shrink-0 text-slate-800 shadow-xs">
+                      <Target size={15} strokeWidth={2.2} />
                     </div>
-                    <p className="text-xs text-slate-600 leading-relaxed font-sans">
-                      To empower businesses with intelligent growth systems that create lasting value for a stronger, more prosperous India.
-                    </p>
+                    <div>
+                      <h4 className="text-xs sm:text-[13px] font-heading font-bold text-[#080E32]">
+                        Pinpoint what's holding you back
+                      </h4>
+                      <p className="text-[11px] text-slate-500 font-sans">
+                        Across leads, marketing, systems, team and tech.
+                      </p>
+                    </div>
                   </div>
 
-                  {/* Vision Card */}
-                  <div className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:border-[#080E32]/40 hover:shadow-md transition-all group">
-                    <div className="flex items-center gap-2.5 mb-2.5">
-                      <div className="w-8 h-8 rounded-lg bg-[#080E32]/10 text-[#080E32] flex items-center justify-center group-hover:bg-[#080E32] group-hover:text-white transition-colors">
-                        <Compass size={16} />
-                      </div>
-                      <span className="text-xs font-heading font-bold uppercase tracking-wider text-[#080E32]">
-                        Our Vision
-                      </span>
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-7 h-7 rounded-full bg-white border border-slate-200/80 flex items-center justify-center shrink-0 text-slate-800 shadow-xs">
+                      <BarChart3 size={15} strokeWidth={2.2} />
                     </div>
-                    <p className="text-xs text-slate-600 leading-relaxed font-sans">
-                      To be India's most trusted growth partner across industries, combining strategic intelligence, technology, and creativity.
-                    </p>
+                    <div>
+                      <h4 className="text-xs sm:text-[13px] font-heading font-bold text-[#080E32]">
+                        Get personalised insights
+                      </h4>
+                      <p className="text-[11px] text-slate-500 font-sans">
+                        Based on real business patterns.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-7 h-7 rounded-full bg-white border border-slate-200/80 flex items-center justify-center shrink-0 text-slate-800 shadow-xs">
+                      <Zap size={15} strokeWidth={2.2} />
+                    </div>
+                    <div>
+                      <h4 className="text-xs sm:text-[13px] font-heading font-bold text-[#080E32]">
+                        Know the next best step
+                      </h4>
+                      <p className="text-[11px] text-slate-500 font-sans">
+                        With clear recommendations.
+                      </p>
+                    </div>
                   </div>
                 </div>
-
               </div>
 
-              {/* Action Link Button */}
-              <div className="pt-4">
-                <button
-                  onClick={() => onNavigate('/about')}
-                  className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-[#080E32] text-white hover:bg-[#2033FF] transition-all font-heading font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg hover:-translate-y-0.5"
-                >
-                  <span>Know Our Story</span>
-                  <ArrowRight size={14} />
-                </button>
-              </div>
-
+              {/* Natural open spacer aligned with the height of the 2-row cards + pill bar */}
+              <div className="hidden lg:block min-h-[110px] xl:min-h-[130px] pointer-events-none" />
             </div>
 
-            {/* Right Architectural Visual & Integrated Framework (Span 6) — Full Height */}
-            <div className="lg:col-span-6 relative flex flex-col h-full min-h-[480px] lg:min-h-0">
+            {/* Right Column: 3x2 Grid of Compact Cards + Snug Integrated Dark Pill Bar */}
+            <div className="lg:col-span-8 flex flex-col justify-start space-y-3 sm:space-y-3.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {problemsList.map((item) => (
+                  <div
+                    key={item.num}
+                    onClick={onOpenDiagnostic}
+                    className="relative p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200/80 hover:border-[#2033FF]/60 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group cursor-pointer shadow-xs overflow-hidden h-[190px] sm:h-[196px]"
+                  >
+                    {/* Top-Right Integrated Artwork */}
+                    <div className="absolute top-0 right-0 w-[55%] h-[72px] pointer-events-none select-none overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt=""
+                        className="w-full h-full object-cover object-right-top group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                      />
+                    </div>
 
-              {/* Full Height Decorative Frame */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200 bg-slate-900 group h-full w-full flex flex-col justify-between">
+                    <div>
+                      {/* Top-Left: Number & Icon */}
+                      <div className="space-y-1 relative z-10 mb-2">
+                        <span className="text-xs font-mono font-bold text-[#2033FF] tracking-wider block">
+                          {item.num}
+                        </span>
+                        <div className="text-[#080E32] group-hover:text-[#2033FF] transition-colors">
+                          <item.icon size={20} strokeWidth={2.2} />
+                        </div>
+                      </div>
 
-                {/* Full Height Building Photo */}
-                <div className="absolute inset-0">
-                  <img
-                    src="/images/sgs-hq-building.jpg"
-                    alt="Sanskar Growth Solutions Corporate Building"
-                    className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#080E32]/95 via-[#080E32]/25 to-[#080E32]/20" />
-                </div>
+                      {/* Title & Description */}
+                      <div className="relative z-10 space-y-1">
+                        <h3 className="text-[14.5px] sm:text-[15px] font-heading font-extrabold text-[#080E32] leading-snug group-hover:text-[#2033FF] transition-colors">
+                          {item.title}
+                        </h3>
+                        <p className="text-[11px] sm:text-[11.5px] text-slate-500 leading-snug font-sans line-clamp-2">
+                          {item.problem}
+                        </p>
+                      </div>
+                    </div>
 
-                {/* Top Location / Status Pill */}
-                <div className="relative z-10 p-5 sm:p-6 flex items-center justify-between pointer-events-none">
-                  <div className="px-3.5 py-1.5 rounded-full bg-[#080E32]/85 backdrop-blur-md border border-white/20 shadow-md flex items-center gap-1.5 text-[11px] font-mono font-bold text-white">
-                    <Building2 size={13} className="text-[#AFEB00]" />
-                    <span>SGS Corporate HQ</span>
-                  </div>
-                  <div className="px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/40 shadow-md text-[10px] font-mono font-bold text-[#0F1B64] uppercase tracking-wider">
-                    Tier-1 Enterprise
-                  </div>
-                </div>
-
-                {/* Bottom Docked Capability Command Center */}
-                <div className="relative z-10 p-4 sm:p-6">
-                  <div className="p-4 sm:p-5 rounded-2xl bg-[#080E32]/95 backdrop-blur-xl border border-white/20 text-white shadow-2xl">
-                    <div className="flex items-center justify-between mb-3 border-b border-white/10 pb-2.5">
-                      <div className="flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-[#AFEB00] animate-pulse" />
-                        <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#AFEB00]">
-                          Connected Growth System
+                    {/* Bottom Row: Impacts & Circle Arrow Button */}
+                    <div className="relative z-10 pt-2 mt-2 border-t border-slate-100 flex items-center justify-between gap-2">
+                      <div>
+                        <span className="text-[8px] font-mono font-bold uppercase tracking-wider text-slate-400 block">
+                          IMPACTS
+                        </span>
+                        <span className="text-[11px] font-heading font-semibold text-[#080E32] leading-tight block">
+                          {item.impacts}
                         </span>
                       </div>
-                      <span className="text-[10px] font-mono uppercase font-bold text-slate-300 px-2 py-0.5 rounded bg-white/10 border border-white/10">
-                        5 Disciplines
-                      </span>
+                      <div className="w-7 h-7 rounded-full border border-[#2033FF]/40 group-hover:border-[#2033FF] group-hover:bg-[#2033FF] group-hover:text-white flex items-center justify-center text-[#2033FF] transition-all shrink-0">
+                        <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+
+                {/* Card 06: Self-Diagnostic CTA Card in Dark Navy */}
+                <div className="relative p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-[#080E32] text-white border border-white/10 flex flex-col justify-between shadow-xl overflow-hidden group h-[190px] sm:h-[196px]">
+                  {/* Glowing curved dotted trendline SVG in background */}
+                  <svg
+                    className="absolute -right-2 top-1/2 -translate-y-1/3 w-44 h-28 pointer-events-none opacity-40"
+                    viewBox="0 0 180 100"
+                    fill="none"
+                  >
+                    <path
+                      d="M10 85 C 50 80, 80 60, 110 35 C 130 18, 150 20, 170 12"
+                      stroke="#84CC16"
+                      strokeWidth="2"
+                      strokeDasharray="4 4"
+                    />
+                    <circle cx="170" cy="12" r="3" fill="#84CC16" />
+                    <circle cx="110" cy="35" r="2" fill="#84CC16" />
+                    <circle cx="60" cy="70" r="1.5" fill="#84CC16" />
+                  </svg>
+
+                  <div className="relative z-10 space-y-2">
+                    {/* Top Row: GET YOUR DIAGNOSTIC + Floating dark pill badge */}
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="flex items-center gap-1.5 text-[#84CC16]">
+                        <BarChart2 size={15} strokeWidth={2.5} />
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider">
+                          GET YOUR DIAGNOSTIC
+                        </span>
+                      </div>
+
+                      <div className="px-1.5 py-0.5 rounded bg-[#0F172A]/90 border border-white/15 text-[8px] text-right font-sans text-slate-300 leading-tight">
+                        <div>Identify.</div>
+                        <div>Prioritize.</div>
+                        <div className="text-[#84CC16] font-semibold">Grow.</div>
+                      </div>
                     </div>
 
-                    {/* 5 Integrated Capability Pills in Clean Grid */}
-                    <div className="grid grid-cols-3 sm:grid-cols-5 gap-1.5 text-center">
-                      {['Growth', 'Strategy', 'Technology', 'Creative', 'Advisory'].map((item, idx) => (
-                        <div
-                          key={idx}
-                          className="py-1.5 px-1 rounded-lg bg-white/5 border border-white/10 text-[10px] sm:text-[11px] font-heading font-semibold text-slate-200"
-                        >
-                          {item}
-                        </div>
-                      ))}
+                    {/* Title & Description */}
+                    <div className="space-y-1">
+                      <h3 className="text-[15px] sm:text-base font-heading font-extrabold text-white leading-tight">
+                        Find Your Specific Bottleneck
+                      </h3>
+                      <p className="text-[11px] text-slate-300 leading-snug font-sans">
+                        Evaluate your leads, marketing, systems and team in under 60 seconds.
+                      </p>
                     </div>
+                  </div>
 
-                    {/* Bottom Assurance */}
-                    <div className="mt-3 pt-2 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-300 font-sans">
-                      <span className="text-white font-heading font-bold flex items-center gap-1.5">
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#2033FF]" />
-                        Real Business Impact
-                      </span>
-                      <span className="text-slate-400 font-mono text-[10px]">Compounding Value</span>
+                  {/* Button */}
+                  <div className="relative z-10 pt-2">
+                    <button
+                      onClick={onOpenDiagnostic}
+                      className="w-full py-2 px-3 rounded-lg bg-[#84CC16] hover:bg-[#65A30D] text-[#080E32] text-[10.5px] font-heading font-extrabold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-md hover:shadow-lime-500/25 active:scale-[0.99] group/btn"
+                    >
+                      <span>TAKE THE GROWTH DIAGNOSTIC</span>
+                      <ArrowRight size={12} className="group-hover/btn:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Integrated Dark Pill Bar directly beneath the 6 cards */}
+              <div className="rounded-2xl bg-[#080E32] text-white p-3 sm:p-3.5 border border-white/10 shadow-xl">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full border border-[#84CC16] flex items-center justify-center text-[#84CC16] shrink-0">
+                      <Clock size={16} strokeWidth={2.2} />
+                    </div>
+                    <div>
+                      <div className="font-heading font-bold text-xs sm:text-[13px] text-[#84CC16]">60 Seconds</div>
+                      <div className="text-[10px] sm:text-[11px] text-slate-300 font-sans">Quick & simple assessment</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3 pt-2 md:pt-0 md:pl-4 lg:pl-5">
+                    <div className="w-8 h-8 rounded-full border border-[#84CC16] flex items-center justify-center text-[#84CC16] shrink-0">
+                      <FileText size={16} strokeWidth={2.2} />
+                    </div>
+                    <div>
+                      <div className="font-heading font-bold text-xs sm:text-[13px] text-[#84CC16]">Personalised Insights</div>
+                      <div className="text-[10px] sm:text-[11px] text-slate-300 font-sans">Based on your business</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3 pt-2 md:pt-0 md:pl-4 lg:pl-5">
+                    <div className="w-8 h-8 rounded-full border border-[#84CC16] flex items-center justify-center text-[#84CC16] shrink-0">
+                      <TrendingUp size={16} strokeWidth={2.2} />
+                    </div>
+                    <div>
+                      <div className="font-heading font-bold text-xs sm:text-[13px] text-[#84CC16]">Clear Next Steps</div>
+                      <div className="text-[10px] sm:text-[11px] text-slate-300 font-sans">Focus on what will drive the most impact</div>
                     </div>
                   </div>
                 </div>
-
               </div>
-
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════════════════════
-          BRAND PERSONALITY & ETHOS BANNER (Brand Guidelines Page 4)
-      ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="py-8 sm:py-10 bg-[#2033FF] text-white border-y border-white/10">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-            <div className="space-y-1.5">
-              <div className="text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-[#AFEB00]">
-                Brand Personality &amp; Operating Standards
-              </div>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-white tracking-tight">
-                Strategic, Professional, Confident, Clear, Innovative, Reliable
-              </h3>
-            </div>
-            <div className="shrink-0">
-              <SgsBrandMotifsStrip motifSize={32} />
             </div>
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-          03. OUR SOLUTIONS — CONNECTED GROWTH ENGINE
+          04. ATTRACT → CONVERT → SCALE (MAIN SERVICES RESTRUCTURED)
       ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="relative py-14 sm:py-20 lg:py-24 bg-[#080E32] text-white overflow-hidden">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-
-          {/* Section Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 sm:mb-14 lg:mb-16">
+      <section className="relative py-16 sm:py-24 bg-[#080E32] text-white overflow-hidden">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 space-y-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
               <div className="text-xs font-bold uppercase tracking-[0.2em] text-[#AFEB00] font-heading mb-2">
-                OUR SOLUTIONS
+                THE THREE GROWTH STAGES
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-heading font-bold leading-[1.08] text-white tracking-tight">
-                Different Capabilities.<br />
-                A Connected Growth Engine.
+                Attract. Convert. Scale.
               </h2>
-              <p className="mt-3 text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed font-sans font-normal">
-                From demand generation to digital platforms, from brand building to business consulting, our solutions work together to create a complete growth system for your business.
+              <p className="mt-3 text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed font-sans">
+                Instead of a disjointed catalog of fifty services, SGS organizes business growth into three synchronized execution phases.
               </p>
             </div>
 
@@ -423,424 +672,751 @@ export const HomeView: React.FC<HomeViewProps> = ({
             </button>
           </div>
 
-          {/* 5 Vertical Solution Cards — Zigzag Staggered Placement with Static 3D Look */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 pt-2 pb-6 lg:pt-6 lg:pb-12">
-            {solutionsList.map((sol, idx) => {
-              const isDown = idx % 2 === 1;
-              return (
-                <div
-                  key={sol.num}
-                  className={isDown ? 'lg:translate-y-7 sm:translate-y-3' : 'lg:-translate-y-5 sm:-translate-y-2'}
-                >
-                  <div
-                    onClick={() => onNavigate(`/solutions/${sol.slug}`)}
-                    className="group relative h-[380px] sm:h-[420px] rounded-2xl overflow-hidden cursor-pointer bg-[#080E32] flex flex-col justify-between p-5 transition-colors duration-300 border-t border-t-white/30 border-x-0 border-b-4 border-b-[#02040e] shadow-[inset_0_1px_0_rgba(255,255,255,0.35),inset_16px_0_24px_-8px_rgba(3,6,22,0.9),inset_-16px_0_24px_-8px_rgba(3,6,22,0.9),inset_0_-2px_4px_rgba(0,0,0,0.8)] hover:border-t-[#AFEB00]/80 hover:border-b-[#01030d]"
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {growthStagesList.map((item, idx) => (
+              <div
+                key={idx}
+                className="relative rounded-2xl overflow-hidden bg-[#0F1B64]/80 border border-white/15 p-6 sm:p-7 flex flex-col justify-between shadow-xl space-y-6"
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-bold px-3 py-1 rounded-full bg-white/10 text-[#AFEB00] border border-white/10">
+                      STAGE 0{idx + 1} • {item.stage}
+                    </span>
+                  </div>
+
+                  <div>
+                    <h3 className="text-2xl font-heading font-bold text-white mb-2">{item.title}</h3>
+                    <div className="h-[2px] w-10 bg-[#2033FF] mb-4" />
+                  </div>
+
+                  <div className="space-y-2">
+                    <span className="text-[11px] font-mono uppercase text-slate-400 font-bold block">
+                      Core Systems Included:
+                    </span>
+                    <ul className="space-y-1.5">
+                      {item.capabilities.map((cap, cIdx) => (
+                        <li key={cIdx} className="flex items-center gap-2 text-xs text-slate-200">
+                          <CheckCircle2 size={13} className="text-[#AFEB00] shrink-0" />
+                          <span>{cap}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-white/10">
+                  <button
+                    onClick={() => onNavigate('/solutions')}
+                    className="w-full py-3 px-4 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-heading font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer"
                   >
-                    {/* Background Image with Depth & Specular Glare */}
-                    <div className="absolute inset-0 z-0">
-                      <img
-                        src={sol.image}
-                        alt={sol.title}
-                        className="w-full h-full object-cover object-center opacity-80"
-                      />
-                      {/* Base Full Gradient */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#080E32] via-[#080E32]/40 to-transparent" />
-                      {/* Diagonal Glass Sheen Light Glare across top surface */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-white/[0.02] to-transparent pointer-events-none" />
+                    <span>{item.ctaText}</span>
+                    <ArrowRight size={14} className="text-[#AFEB00]" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          05. INDUSTRY-SPECIFIC GROWTH SYSTEMS
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="relative py-16 sm:py-24 bg-[#F5FAFF] text-[#141414] border-b border-slate-200">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 space-y-10">
+          <div className="max-w-3xl space-y-3">
+            <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#2033FF] font-heading">
+              SECTOR-SPECIFIC ARCHITECTURES
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-heading font-bold leading-[1.08] text-[#141414] tracking-tight">
+              Industry-Specific Growth Systems
+            </h2>
+            <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-sans">
+              Every industry has different customers, sales cycles and operational challenges. SGS builds growth and technology systems around how your business actually operates.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {priorityIndustriesList.slice(0, 3).map((ind, idx) => (
+              <div
+                key={idx}
+                onClick={() => onNavigate(`/industries/${ind.slug}`)}
+                className="group relative h-[380px] rounded-2xl overflow-hidden cursor-pointer shadow-md bg-slate-900 flex flex-col justify-between p-6 transition-transform duration-300 hover:-translate-y-1.5"
+              >
+                <img
+                  src={ind.image}
+                  alt={ind.title}
+                  className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+
+                <div className="relative z-10 flex items-center justify-between">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-[#080E32]/80 text-[#AFEB00] border border-white/20">
+                    {ind.tag}
+                  </span>
+                </div>
+
+                <div className="relative z-10 space-y-2 text-white">
+                  <h3 className="text-xl sm:text-2xl font-bold font-heading leading-tight group-hover:text-[#AFEB00] transition-colors">
+                    {ind.title}
+                  </h3>
+                  <div className="pt-2 flex items-center justify-between border-t border-white/20">
+                    <span className="text-xs font-heading font-semibold text-slate-200">
+                      {ind.cta}
+                    </span>
+                    <ArrowRight size={14} className="text-[#AFEB00] group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center pt-2">
+            <button
+              onClick={() => onNavigate('/industries')}
+              className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#2033FF] hover:text-[#080E32] transition-colors"
+            >
+              <span>Explore All Industries We Serve</span>
+              <ArrowRight size={14} />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          06. HOW WE WORK — FROM BUSINESS PROBLEM TO GROWTH SYSTEM
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="relative py-16 sm:py-24 bg-white text-[#141414] border-b border-slate-200">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+          {/* Header & Top Ascending Stepper Visual */}
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+            <div className="max-w-2xl space-y-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EEF2FF] border border-[#E0E7FF] text-[#4F46E5] text-[11px] font-mono font-bold uppercase tracking-wider">
+                <span>METHODOLOGY</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-heading font-black leading-[1.08] text-[#080E32] tracking-tight">
+                From Business Problem to<br />
+                <span className="text-[#AFEB00]">Growth System.</span>
+              </h2>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-sans">
+                A clear, accountable 6-step journey from initial diagnosis to sustainable commercial scale.
+              </p>
+            </div>
+
+            {/* Ascending Curve Stepper Graph */}
+            <div className="w-full lg:max-w-xl relative pt-4 lg:pt-0">
+              <svg
+                className="w-full h-auto overflow-visible select-none"
+                viewBox="0 0 760 160"
+                fill="none"
+              >
+                <defs>
+                  <linearGradient id="stepperFillGrad" x1="0" y1="1" x2="1" y2="0">
+                    <stop offset="0%" stopColor="#2033FF" stopOpacity="0.02" />
+                    <stop offset="50%" stopColor="#2033FF" stopOpacity="0.06" />
+                    <stop offset="100%" stopColor="#AFEB00" stopOpacity="0.22" />
+                  </linearGradient>
+                  <linearGradient id="stepperStrokeGrad" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stopColor="#080E32" stopOpacity="0.35" />
+                    <stop offset="45%" stopColor="#2033FF" stopOpacity="0.65" />
+                    <stop offset="100%" stopColor="#AFEB00" />
+                  </linearGradient>
+                </defs>
+
+                {/* Shaded area under the curve */}
+                <path
+                  d="M 30 140 C 85 134, 120 126, 165 116 C 215 106, 260 94, 305 80 C 355 67, 400 54, 445 44 C 475 36, 505 32, 535 28 L 535 160 L 30 160 Z"
+                  fill="url(#stepperFillGrad)"
+                />
+
+                {/* Dashed curve line */}
+                <path
+                  d="M 30 140 C 85 134, 120 126, 165 116 C 215 106, 260 94, 305 80 C 355 67, 400 54, 445 44 C 475 36, 505 32, 535 28"
+                  stroke="url(#stepperStrokeGrad)"
+                  strokeWidth="2.5"
+                  strokeDasharray="5 5"
+                />
+
+                {/* Step 1: Diagnose (Dot at 30, 140) */}
+                <g>
+                  <text x="30" y="104" fill="#080E32" style={{ fontWeight: 800, fontSize: '12px', fontFamily: 'inherit' }}>
+                    Diagnose
+                  </text>
+                  <text x="30" y="122" fill="#64748B" style={{ fontSize: '10px', fontFamily: 'inherit' }}>
+                    Find the real issues
+                  </text>
+                  <circle cx="30" cy="140" r="4.5" fill="#080E32" stroke="white" strokeWidth="2.5" />
+                </g>
+
+                {/* Step 2: Strategize (Dot at 165, 116) */}
+                <g>
+                  <text x="165" y="80" fill="#080E32" style={{ fontWeight: 800, fontSize: '12px', fontFamily: 'inherit' }}>
+                    Strategize
+                  </text>
+                  <text x="165" y="98" fill="#64748B" style={{ fontSize: '10px', fontFamily: 'inherit' }}>
+                    Plan for impact
+                  </text>
+                  <circle cx="165" cy="116" r="4.5" fill="#2033FF" stroke="white" strokeWidth="2.5" />
+                </g>
+
+                {/* Step 3: Build (Dot at 305, 80) */}
+                <g>
+                  <text x="305" y="44" fill="#080E32" style={{ fontWeight: 800, fontSize: '12px', fontFamily: 'inherit' }}>
+                    Build
+                  </text>
+                  <text x="305" y="62" fill="#64748B" style={{ fontSize: '10px', fontFamily: 'inherit' }}>
+                    Implement systems
+                  </text>
+                  <circle cx="305" cy="80" r="4.5" fill="#2033FF" stroke="white" strokeWidth="2.5" />
+                </g>
+
+                {/* Step 4: Scale (Dot at 445, 44) */}
+                <g>
+                  <text x="445" y="10" fill="#080E32" style={{ fontWeight: 800, fontSize: '12px', fontFamily: 'inherit' }}>
+                    Scale
+                  </text>
+                  <text x="445" y="28" fill="#64748B" style={{ fontSize: '10px', fontFamily: 'inherit' }}>
+                    Drive continuous growth
+                  </text>
+                  <circle cx="445" cy="44" r="4.5" fill="#080E32" stroke="white" strokeWidth="2.5" />
+                </g>
+
+                {/* Peak Action Indicator (Hits at 535, 28) */}
+                <foreignObject x="535" y="10" width="225" height="42" className="overflow-visible">
+                  <div
+                    onClick={() => onOpenProjectModal()}
+                    className="flex items-center gap-2 cursor-pointer group"
+                  >
+                    <div className="w-8 h-8 rounded-full bg-[#AFEB00] group-hover:scale-105 transition-transform flex items-center justify-center text-[#080E32] shadow-md shadow-lime-500/25 shrink-0">
+                      <ArrowUpRight size={16} strokeWidth={2.5} />
                     </div>
-
-                    {/* Inward Curved Side Shading Gradients (Left & Right concave curve effect) */}
-                    <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-[#020514]/80 via-transparent via-50% to-[#020514]/80 z-[4]" />
-
-                    {/* Dedicated Deep Gradient Backdrop Behind Text for Maximum Legibility */}
-                    <div className="absolute inset-x-0 bottom-0 h-[72%] bg-gradient-to-t from-[#080E32] from-25% via-[#080E32]/95 via-60% to-transparent pointer-events-none z-[5]" />
-
-                    {/* Top Number */}
-                    <div className="relative z-10">
-                      <span className="inline-block text-xs font-mono font-bold text-[#AFEB00] tracking-wider px-2 py-0.5 rounded-md bg-[#080E32]/85 border-t border-t-white/30 border-b border-b-black/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.3)]">
-                        {sol.num}
-                      </span>
+                    <div className="px-3 py-1.5 rounded-xl bg-[#080E32] group-hover:bg-[#0F1B64] border border-white/10 shadow-lg text-[10px] font-heading font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors whitespace-nowrap">
+                      <span className="text-[#AFEB00]">A CLEAR PATH TO GROWTH</span>
+                      <ArrowRight size={11} className="text-[#AFEB00] group-hover:translate-x-0.5 transition-transform" />
                     </div>
+                  </div>
+                </foreignObject>
+              </svg>
+            </div>
+          </div>
 
-                    {/* Bottom Content with enhanced readability */}
-                    <div className="relative z-10 space-y-3">
-                      <h3 className="text-xl font-bold font-heading text-white group-hover:text-[#AFEB00] transition-colors leading-snug drop-shadow-md">
-                        {sol.title}
-                      </h3>
-
-                      <div className="space-y-1.5 text-xs font-sans">
-                        {sol.capabilities.map((cap, cIdx) => (
-                          <div key={cIdx} className="leading-tight text-slate-200 drop-shadow-sm font-medium">
-                            {cap}
+          {/* Main 4-Column Grid: 6 Steps (Cols 1-3) + Dark CTA Card (Col 4) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+            {/* 6 Process Cards */}
+            <div className="lg:col-span-9 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 relative">
+              {approachSteps.map((step, idx) => {
+                const Icon = step.icon;
+                const showArrow = idx === 0 || idx === 1 || idx === 3 || idx === 4;
+                return (
+                  <div key={step.num} className="relative group flex flex-col">
+                    <div
+                      onClick={() => onOpenProjectModal(step.title)}
+                      className="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200/90 hover:border-[#2033FF]/60 hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-full shadow-xs cursor-pointer"
+                    >
+                      <div>
+                        {/* Top Row: Icon + Watermark Number */}
+                        <div className="flex items-start justify-between">
+                          <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200/80 text-[#2033FF] flex items-center justify-center shadow-xs group-hover:scale-105 group-hover:border-[#2033FF]/40 transition-transform">
+                            <Icon size={20} strokeWidth={2.2} />
                           </div>
-                        ))}
+                          <span className="text-3xl sm:text-4xl font-heading font-black text-slate-200 group-hover:text-slate-300 transition-colors tracking-tight select-none">
+                            {step.num}
+                          </span>
+                        </div>
+
+                        {/* Title & Description */}
+                        <div className="mt-4 space-y-1.5">
+                          <h3 className="text-lg font-heading font-bold text-[#080E32] group-hover:text-[#2033FF] transition-colors">
+                            {step.title}
+                          </h3>
+                          <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-sans">
+                            {step.desc}
+                          </p>
+                        </div>
                       </div>
 
-                      {/* Geometric Bottom Arrow Button — 3D Beveled Pill without outer shadow */}
-                      <div className="pt-1 flex items-center justify-start">
-                        <div className="w-8 h-8 rounded-lg bg-white/15 backdrop-blur-sm border-t border-t-white/40 border-l border-l-white/25 border-b-2 border-b-black/70 flex items-center justify-center text-white transition-colors duration-200 group-hover:bg-[#AFEB00] group-hover:text-[#0F1B64] group-hover:border-t-[#AFEB00] group-hover:border-b-[#7CB000]">
-                          <ArrowRight size={13} />
+                      {/* Bottom Right: Circular Arrow Button */}
+                      <div className="pt-4 flex justify-end">
+                        <div className="w-8 h-8 rounded-full border border-slate-300 group-hover:border-[#2033FF] group-hover:bg-[#2033FF] group-hover:text-white flex items-center justify-center text-slate-600 transition-all shrink-0">
+                          <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
                         </div>
                       </div>
                     </div>
 
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════════════════════
-          04. INDUSTRIES WE SERVE — REAL BUSINESSES. REAL IMPACT.
-      ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="relative py-14 sm:py-20 bg-[#F5FAFF] text-[#1A1A1A]">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-
-            {/* Left Narrative (Span 4) */}
-            <div className="lg:col-span-4 space-y-4 lg:sticky lg:top-32">
-              <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#2033FF] font-heading">
-                INDUSTRIES WE SERVE
-              </div>
-
-              <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-heading font-bold leading-[1.08] text-[#141414] tracking-tight">
-                Real<br />
-                Businesses.<br />
-                Real Impact.
-              </h2>
-
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-sans max-w-sm">
-                We work with ambitious businesses across key industries, understanding their unique challenges and creating tailored growth solutions.
-              </p>
-
-              <div>
-                <button
-                  onClick={() => onNavigate('/industries')}
-                  className="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#141414] hover:text-[#2033FF] transition-colors border-b border-black/40 pb-1"
-                >
-                  <span>Explore Your Industry</span>
-                  <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
-                </button>
-              </div>
-            </div>
-
-            {/* Right 5 Tall Industry Cards (Span 8) */}
-            <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
-              {industriesList.map((ind, idx) => (
-                <div
-                  key={idx}
-                  onClick={() => onNavigate(`/industries/${ind.slug}`)}
-                  className="group relative h-[320px] sm:h-[380px] rounded-2xl overflow-hidden cursor-pointer shadow-md bg-slate-900 flex flex-col justify-end p-4 transition-transform duration-300 hover:-translate-y-1"
-                >
-                  <img
-                    src={ind.image}
-                    alt={ind.title}
-                    className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-
-                  <div className="relative z-10 text-white font-bold text-sm sm:text-base font-heading leading-tight group-hover:text-[#AFEB00] transition-colors">
-                    {ind.title}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════════════════════
-          05. OUR APPROACH — A CLEAR PATH FROM INSIGHT TO IMPACT (REDESIGNED)
-      ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="relative py-16 sm:py-24 bg-gradient-to-b from-white via-[#F5FAFF] to-white text-[#1A1A1A] border-y border-slate-200/80 overflow-hidden">
-        {/* Subtle background ambient lighting */}
-        <div className="absolute top-1/2 left-0 w-96 h-96 rounded-full bg-[#2033FF]/5 blur-[120px] pointer-events-none -translate-y-1/2" />
-        <div className="absolute top-1/2 right-0 w-96 h-96 rounded-full bg-[#AFEB00]/10 blur-[120px] pointer-events-none -translate-y-1/2" />
-
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 relative z-10">
-
-          {/* Section Header & Slogan Banner */}
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 sm:mb-16">
-            <div className="space-y-3 max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#2033FF]/10 border border-[#2033FF]/20 text-[#2033FF]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#2033FF]" />
-                <span className="text-[11px] font-mono font-bold uppercase tracking-wider">
-                  Our 5-Stage Execution Framework
-                </span>
-              </div>
-
-              <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-heading font-bold leading-[1.1] text-[#080E32] tracking-tight">
-                A Clear Path from Insight to Impact.
-              </h2>
-
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-sans">
-                A structured, audited methodology turning ambitious business targets into predictable, compounding commercial growth.
-              </p>
-            </div>
-
-            {/* Slogan Card */}
-            <div className="p-4 sm:p-5 rounded-2xl bg-[#080E32] text-white border border-white/10 shadow-xl flex items-center gap-4 shrink-0 lg:max-w-md">
-              <div className="w-10 h-10 rounded-xl bg-[#2033FF]/30 border border-[#2033FF]/40 text-[#AFEB00] flex items-center justify-center shrink-0">
-                <CheckCircle2 size={20} />
-              </div>
-              <div>
-                <div className="font-heading text-base font-bold text-white tracking-tight flex items-center gap-2">
-                  <span>Growth Without Guesswork</span>
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#AFEB00] animate-pulse" />
-                </div>
-                <p className="text-xs text-slate-300 font-sans mt-0.5">
-                  Milestone-driven roadmaps with transparent attribution.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Connected 5-Step Process Pipeline */}
-          <div className="relative">
-            {/* Desktop Connecting Line behind cards */}
-            <div className="hidden lg:block absolute top-[44px] left-[5%] right-[5%] h-[2px] bg-gradient-to-r from-[#2033FF]/20 via-[#2033FF]/60 to-[#AFEB00]/80 z-0" />
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5 relative z-10">
-              {approachSteps.map((step) => {
-                const Icon = step.icon;
-                return (
-                  <div
-                    key={step.num}
-                    className="group relative bg-white rounded-2xl p-5 sm:p-6 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-[#2033FF] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
-                  >
-                    {/* Top Row: Icon Container + Step Badge */}
-                    <div className="flex items-center justify-between mb-5">
-                      <div className="w-12 h-12 rounded-xl bg-[#F5FAFF] border border-slate-200 text-[#2033FF] flex items-center justify-center group-hover:bg-[#2033FF] group-hover:text-white group-hover:border-[#2033FF] group-hover:scale-105 transition-all shadow-sm">
-                        <Icon size={22} strokeWidth={1.8} />
+                    {/* Horizontal Connector Arrow (large screens) */}
+                    {showArrow && (
+                      <div className="hidden lg:flex absolute -right-3.5 top-1/2 -translate-y-1/2 z-10 w-4 h-4 items-center justify-center pointer-events-none text-slate-300 font-mono text-xs">
+                        →
                       </div>
-                      <span className="text-xs font-mono font-bold text-slate-400 group-hover:text-[#2033FF] px-2.5 py-1 rounded-full bg-slate-100 group-hover:bg-[#2033FF]/10 transition-colors">
-                        {step.num}
-                      </span>
-                    </div>
-
-                    {/* Step Title & Description */}
-                    <div className="space-y-2 flex-grow">
-                      <div className="text-[11px] font-mono uppercase font-bold text-[#2033FF] tracking-wider">
-                        {step.phase}
-                      </div>
-                      <h3 className="text-lg font-bold font-heading text-[#080E32] group-hover:text-[#2033FF] transition-colors">
-                        {step.title}
-                      </h3>
-                      <p className="text-xs text-slate-600 leading-relaxed font-sans">
-                        {step.desc}
-                      </p>
-                    </div>
-
-                    {/* Bottom Deliverable Tag */}
-                    <div className="mt-5 pt-3.5 border-t border-slate-100 flex items-center justify-between">
-                      <span className="text-[10px] font-mono uppercase font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
-                        {step.deliverable}
-                      </span>
-                      <ArrowRight size={13} className="text-slate-300 group-hover:text-[#2033FF] group-hover:translate-x-1 transition-all" />
-                    </div>
+                    )}
                   </div>
                 );
               })}
             </div>
+
+            {/* Dark CTA Card */}
+            <div className="lg:col-span-3 bg-[#080E32] text-white rounded-2xl p-6 sm:p-7 border border-white/10 shadow-xl flex flex-col justify-between relative overflow-hidden group">
+              <div className="relative z-10 space-y-4">
+                {/* Badge */}
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#AFEB00]/10 border border-[#AFEB00]/30 text-[#AFEB00] text-[10px] font-mono font-bold tracking-wider uppercase">
+                  <Settings size={12} />
+                  <span>STRUCTURED. PRACTICAL. RESULT-DRIVEN.</span>
+                </div>
+
+                {/* Heading */}
+                <h3 className="text-xl sm:text-2xl font-heading font-extrabold text-white leading-tight">
+                  Turn Your Business Challenges Into<br />
+                  <span className="text-[#AFEB00]">Measurable Growth.</span>
+                </h3>
+
+                {/* 4 Checkmarks */}
+                <div className="space-y-3 pt-2">
+                  <div className="flex items-center gap-2.5 text-xs sm:text-[13px] text-slate-200 font-sans">
+                    <CheckCircle2 size={16} className="text-[#AFEB00] shrink-0" />
+                    <span>Clear diagnosis</span>
+                  </div>
+                  <div className="flex items-center gap-2.5 text-xs sm:text-[13px] text-slate-200 font-sans">
+                    <CheckCircle2 size={16} className="text-[#AFEB00] shrink-0" />
+                    <span>Custom growth roadmap</span>
+                  </div>
+                  <div className="flex items-center gap-2.5 text-xs sm:text-[13px] text-slate-200 font-sans">
+                    <CheckCircle2 size={16} className="text-[#AFEB00] shrink-0" />
+                    <span>Execution support</span>
+                  </div>
+                  <div className="flex items-center gap-2.5 text-xs sm:text-[13px] text-slate-200 font-sans">
+                    <CheckCircle2 size={16} className="text-[#AFEB00] shrink-0" />
+                    <span>Measurable results</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Button */}
+              <div className="relative z-10 pt-6">
+                <button
+                  onClick={() => onOpenProjectModal()}
+                  className="w-full py-3.5 px-4 rounded-xl bg-[#AFEB00] text-[#080E32] hover:bg-[#9EEB00] text-xs font-heading font-extrabold uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md hover:shadow-lime-500/25 active:scale-[0.99] group/btn"
+                >
+                  <span>TALK TO OUR TEAM</span>
+                  <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+                </button>
+              </div>
+            </div>
           </div>
 
+          {/* Full-width 4-Item Bar Strip */}
+          <div className="rounded-2xl bg-[#F8FAFC] border border-slate-200/90 p-5 sm:p-6 shadow-xs">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 divide-y sm:divide-y-0 sm:divide-x divide-slate-200/80">
+              <div className="flex items-center gap-3.5">
+                <div className="w-10 h-10 rounded-full bg-[#2033FF]/10 text-[#2033FF] flex items-center justify-center shrink-0">
+                  <Target size={18} strokeWidth={2.2} />
+                </div>
+                <div>
+                  <h4 className="font-heading font-bold text-xs sm:text-sm text-[#080E32]">Structured methodology</h4>
+                  <p className="text-xs text-slate-500 font-sans mt-0.5">From insight to execution</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3.5 pt-4 sm:pt-0 sm:pl-5 lg:pl-6">
+                <div className="w-10 h-10 rounded-full bg-[#2033FF]/10 text-[#2033FF] flex items-center justify-center shrink-0">
+                  <Users size={18} strokeWidth={2.2} />
+                </div>
+                <div>
+                  <h4 className="font-heading font-bold text-xs sm:text-sm text-[#080E32]">Cross-functional expertise</h4>
+                  <p className="text-xs text-slate-500 font-sans mt-0.5">Business + Marketing + Technology</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3.5 pt-4 sm:pt-0 sm:pl-5 lg:pl-6">
+                <div className="w-10 h-10 rounded-full bg-[#2033FF]/10 text-[#2033FF] flex items-center justify-center shrink-0">
+                  <FileText size={18} strokeWidth={2.2} />
+                </div>
+                <div>
+                  <h4 className="font-heading font-bold text-xs sm:text-sm text-[#080E32]">Practical, real-world approach</h4>
+                  <p className="text-xs text-slate-500 font-sans mt-0.5">Built for commercial impact</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3.5 pt-4 sm:pt-0 sm:pl-5 lg:pl-6">
+                <div className="w-10 h-10 rounded-full bg-[#2033FF]/10 text-[#2033FF] flex items-center justify-center shrink-0">
+                  <BarChart3 size={18} strokeWidth={2.2} />
+                </div>
+                <div>
+                  <h4 className="font-heading font-bold text-xs sm:text-sm text-[#080E32]">Designed for scale</h4>
+                  <p className="text-xs text-slate-500 font-sans mt-0.5">From early traction to long-term growth</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-          06. SELECTED WORK — REAL STORIES. TANGIBLE RESULTS.
+          07. SELECTED WORK / CASE STUDIES (OUR CLIENTS, REAL GROWTH)
       ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="relative py-14 sm:py-20 bg-[#080E32] text-white overflow-hidden">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+      <section className="relative py-16 sm:py-24 bg-[#060B24] text-white overflow-hidden">
+        {/* Architectural building watermark at bottom left - Enhanced visibility */}
+        <div className="absolute left-0 bottom-0 w-[440px] h-[460px] sm:w-[540px] sm:h-[560px] lg:w-[640px] lg:h-[640px] opacity-45 pointer-events-none overflow-hidden select-none z-0">
+          <img
+            src="/images/hero-building.jpg"
+            alt=""
+            className="w-full h-full object-cover object-bottom filter grayscale contrast-150 brightness-135 mix-blend-luminosity"
+          />
+          {/* Subtle boundary fades so it blends smoothly without hard edges */}
+          <div className="absolute inset-0 bg-gradient-to-t from-transparent via-[#060B24]/30 to-[#060B24]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#060B24]" />
+        </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-
-            {/* Left Narrative (Span 4) */}
-            <div className="lg:col-span-4 space-y-4">
-              <div className="text-xs font-bold uppercase tracking-[0.2em] text-[#AFEB00] font-heading">
-                SELECTED WORK
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8 relative z-10 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-10 items-start w-full">
+            {/* Left Narrative Column (lg:col-span-3) */}
+            <div className="lg:col-span-3 min-w-0 space-y-4 pt-2">
+              <div className="text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-[#B4F000]">
+                TRUSTED BY GROWING BUSINESSES
               </div>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-heading font-bold leading-[1.08] text-white tracking-tight">
-                Real<br />
-                Stories.<br />
-                Tangible<br />
-                Results.
+              <h2 className="text-3xl sm:text-4xl lg:text-[46px] xl:text-[52px] font-heading font-black leading-[1.04] text-white tracking-tight">
+                Our Clients,<br />
+                <span className="text-[#B4F000]">Real Growth.</span>
               </h2>
 
-              <p className="text-sm text-slate-300 leading-relaxed font-sans max-w-xs">
-                From emerging brands to established enterprises, we help businesses achieve meaningful growth through strategy, technology and creative execution.
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans max-w-xs pt-1">
+                From established companies to fast-growing businesses, we build systems that create measurable commercial impact.
               </p>
 
-              <div>
+              <div className="pt-2">
                 <button
                   onClick={() => onNavigate('/work')}
-                  className="inline-flex items-center gap-2 text-xs font-bold text-[#AFEB00] hover:underline"
+                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#B4F000] hover:underline cursor-pointer group"
                 >
-                  <span>View More Case Studies</span>
-                  <ArrowRight size={14} />
+                  <span>View All Case Studies</span>
+                  <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
             </div>
 
-            {/* Center Featured Case Study Card (Span 5) */}
-            <div className="lg:col-span-5 bg-[#0A1245] border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
-              <div className="relative h-60 sm:h-64 bg-slate-800">
-                <img
-                  src={activeCase.image}
-                  alt={activeCase.client}
-                  className="w-full h-full object-cover object-center"
-                />
+            {/* Right Main Area (lg:col-span-9): Top Logos + Center Card & Right Cards */}
+            <div className="lg:col-span-9 min-w-0 space-y-5 sm:space-y-6 w-full">
+              {/* Top Client Logos & Carousel Controls Bar */}
+              <div className="flex items-center justify-between gap-3 sm:gap-4 pb-4 border-b border-white/10 overflow-x-auto no-scrollbar w-full min-w-0">
+                {/* 5 Client Logos with Dividers */}
+                <div className="flex items-center gap-4 sm:gap-6 lg:gap-7 shrink min-w-0">
+                  {/* Logo 1: Raaga Interiors */}
+                  <button
+                    onClick={() => setActiveCaseIdx(0)}
+                    className={`flex flex-col items-start leading-none transition-opacity cursor-pointer shrink-0 ${activeCaseIdx === 0 ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}
+                  >
+                    <span className="font-serif text-base sm:text-lg tracking-tight text-white font-normal">Raaga</span>
+                    <span className="text-[8px] font-mono tracking-[0.25em] text-slate-400 uppercase mt-0.5">INTERIORS</span>
+                  </button>
 
-                {/* Pagination Indicator Top Right */}
-                <div className="absolute top-4 right-4 flex items-center gap-2 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-lg text-xs font-mono text-white/90">
-                  <span>{String(activeCaseIdx + 1).padStart(2, '0')} / {String(caseStudiesList.length).padStart(2, '0')}</span>
-                  <div className="flex items-center gap-1 ml-1 text-white">
+                  <div className="h-5 sm:h-6 w-px bg-white/10 shrink-0" />
+
+                  {/* Logo 2: Sanskar Realty */}
+                  <button
+                    onClick={() => setActiveCaseIdx(1)}
+                    className={`flex items-center gap-2 transition-opacity cursor-pointer shrink-0 ${activeCaseIdx === 1 ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}
+                  >
+                    <svg className="w-4 h-5 sm:w-5 sm:h-6 text-slate-300" viewBox="0 0 24 28" fill="none" stroke="currentColor" strokeWidth="2">
+                      <rect x="3" y="10" width="5" height="16" rx="1" />
+                      <rect x="10" y="4" width="5" height="22" rx="1" />
+                      <rect x="17" y="14" width="5" height="12" rx="1" />
+                    </svg>
+                    <div className="leading-tight text-left">
+                      <span className="font-heading font-bold text-xs text-white block">Sanskar</span>
+                      <span className="text-[9px] sm:text-[10px] text-slate-300 font-sans block">Realty</span>
+                    </div>
+                  </button>
+
+                  <div className="h-5 sm:h-6 w-px bg-white/10 shrink-0" />
+
+                  {/* Logo 3: Nova Distribution */}
+                  <button
+                    onClick={() => setActiveCaseIdx(2)}
+                    className={`flex items-center gap-2 transition-opacity cursor-pointer shrink-0 ${activeCaseIdx === 2 ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}
+                  >
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2L22 20H15.5L12 13L8.5 20H2L12 2Z" />
+                    </svg>
+                    <div className="leading-tight text-left">
+                      <span className="font-heading font-black text-[11px] sm:text-xs text-white tracking-wider block">NOVA</span>
+                      <span className="text-[7px] sm:text-[8px] font-mono text-slate-400 tracking-widest block uppercase">DISTRIBUTION</span>
+                    </div>
+                  </button>
+
+                  <div className="h-5 sm:h-6 w-px bg-white/10 shrink-0" />
+
+                  {/* Logo 4: Cleanzo */}
+                  <button
+                    onClick={() => setActiveCaseIdx(3)}
+                    className={`flex items-center gap-1.5 sm:gap-2 transition-opacity cursor-pointer shrink-0 ${activeCaseIdx === 3 ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}
+                  >
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+                    </svg>
+                    <span className="font-heading font-black text-[11px] sm:text-xs tracking-wider text-white uppercase">CLEANZO</span>
+                  </button>
+
+                  <div className="h-5 sm:h-6 w-px bg-white/10 shrink-0 hidden sm:block" />
+
+                  {/* Logo 5: Avani Land Developers */}
+                  <div className="hidden sm:flex items-center gap-2 opacity-60 text-slate-300 shrink-0">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-slate-300" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 3c-1.5 3-4 6-7 8 3 1 6 3 7 7 1-4 4-6 7-7-3-2-5.5-5-7-8z" />
+                    </svg>
+                    <div className="leading-tight text-left">
+                      <span className="font-serif font-bold text-xs text-white block">Avani</span>
+                      <span className="text-[8px] font-mono text-slate-400 tracking-wider block uppercase">LAND DEVELOPERS</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Carousel Prev / Next Navigation Arrows */}
+                <div className="flex items-center gap-2 shrink-0">
+                  <button
+                    onClick={() => setActiveCaseIdx((prev) => (prev > 0 ? prev - 1 : caseStudiesList.length - 1))}
+                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#15234E] hover:bg-[#1E3068] text-white/90 flex items-center justify-center transition-colors cursor-pointer border border-white/10"
+                    aria-label="Previous case study"
+                  >
+                    <ChevronLeft size={16} />
+                  </button>
+                  <button
+                    onClick={() => setActiveCaseIdx((prev) => (prev < caseStudiesList.length - 1 ? prev + 1 : 0))}
+                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#B4F000] hover:bg-[#A3E600] text-[#080E28] flex items-center justify-center transition-colors shadow-lg cursor-pointer"
+                    aria-label="Next case study"
+                  >
+                    <ChevronRight size={16} strokeWidth={2.5} />
+                  </button>
+                </div>
+              </div>
+
+              {/* Grid: Center Mega Card (lg:col-span-7) + Right Cards Stack (lg:col-span-5) */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-5 items-stretch w-full min-w-0">
+                {/* Center Mega Featured Card (lg:col-span-7) */}
+                <div className="lg:col-span-7 min-w-0 rounded-3xl overflow-hidden bg-[#070D28] border border-white/10 shadow-2xl flex flex-col justify-between h-full">
+                  {/* Top Photographic Area */}
+                  <div className="relative flex-1 min-h-[360px] sm:min-h-[400px] p-5 sm:p-7 flex flex-col justify-between overflow-hidden">
+                    <img
+                      src={activeCase.image}
+                      alt={activeCase.client}
+                      className="absolute inset-0 w-full h-full object-cover object-center transition-all duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#060B24]/95 via-[#060B24]/75 to-transparent pointer-events-none" />
+
+                    {/* Top Badge */}
+                    <div className="relative z-10">
+                      <span className="inline-block px-3.5 py-1 rounded-full bg-[#F1FCE2] text-[#1E293B] text-[10px] font-mono font-bold uppercase tracking-wider shadow-sm">
+                        FEATURED CASE STUDY
+                      </span>
+                    </div>
+
+                    {/* Main Copy Inside Photo Card */}
+                    <div className="relative z-10 space-y-2.5 pt-4">
+                      {/* Client Logo / Wordmark */}
+                      <div className="space-y-0.5">
+                        <div className="font-serif text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight leading-none font-normal">
+                          {activeCase.client.split(' ')[0]}
+                        </div>
+                        <div className="text-[10px] font-mono tracking-[0.3em] text-slate-300 uppercase">
+                          {activeCase.client.split(' ').slice(1).join(' ') || 'SOLUTIONS'}
+                        </div>
+                        <div className="text-xs text-slate-400 font-sans pt-0.5">
+                          {activeCase.industry}
+                        </div>
+                      </div>
+
+                      {/* Headline */}
+                      <h3 className="text-lg sm:text-xl lg:text-[22px] xl:text-[25px] font-heading font-bold text-white leading-[1.2] max-w-md pt-1">
+                        {activeCase.headline}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="text-xs sm:text-[13px] text-slate-200/90 leading-relaxed font-sans max-w-sm">
+                        {activeCase.description || activeCase.sgsApproach}
+                      </p>
+
+                      {/* CTA Button */}
+                      <div className="pt-2">
+                        <button
+                          onClick={() => onNavigate('/work')}
+                          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#B4F000] text-[#080E28] hover:bg-[#A3E600] text-xs font-heading font-extrabold uppercase tracking-wider cursor-pointer shadow-md transition-all group"
+                        >
+                          <span>View Full Case Study</span>
+                          <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bottom White Metrics Bar */}
+                  <div className="bg-white text-[#080E28] p-4 sm:p-5 grid grid-cols-3 gap-2.5 sm:gap-4 divide-x divide-slate-200 min-w-0">
+                    {activeCase.metrics.map((m, mIdx) => (
+                      <div key={mIdx} className={`min-w-0 ${mIdx > 0 ? 'pl-2.5 sm:pl-4' : ''}`}>
+                        <div className="text-xl sm:text-2xl lg:text-[26px] font-heading font-black text-[#080E28] tracking-tight leading-none">
+                          {m.value}
+                        </div>
+                        <div className="text-[11px] sm:text-xs font-heading font-bold text-slate-800 leading-tight mt-1.5 truncate">
+                          {m.label}
+                        </div>
+                        <div className="text-[10px] sm:text-[11px] font-semibold text-[#16A34A] mt-1 flex items-center gap-1 font-sans leading-tight">
+                          {m.sub || 'From setup to measurable results'}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Right 4 Selectable Case Study Cards (lg:col-span-5) */}
+                <div className="lg:col-span-5 min-w-0 flex flex-col justify-between h-full space-y-0">
+                  <div className="grid grid-rows-4 gap-2.5 sm:gap-3 flex-1 pb-2">
+                    {caseStudiesList.map((cs, idx) => {
+                      const isActive = activeCaseIdx === idx;
+                      return (
+                        <div
+                          key={cs.id}
+                          onClick={() => setActiveCaseIdx(idx)}
+                          className={`p-3 sm:p-3.5 rounded-2xl cursor-pointer transition-all duration-300 flex items-center justify-between gap-2.5 sm:gap-3 h-full min-w-0 ${
+                            isActive
+                              ? 'bg-[#070E30] border-2 border-[#B4F000] shadow-lg shadow-lime-500/10'
+                              : 'bg-[#081033] border border-white/10 hover:border-white/25 hover:bg-[#0A143E]'
+                          }`}
+                        >
+                          {/* Thumbnail */}
+                          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden shrink-0 bg-slate-800">
+                            <img
+                              src={cs.image}
+                              alt={cs.client}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+
+                          {/* Info */}
+                          <div className="flex-1 min-w-0 space-y-0.5 sm:space-y-1">
+                            <h4 className="font-heading font-bold text-white text-sm sm:text-[15px] truncate">
+                              {cs.client}
+                            </h4>
+                            <p className="text-[11px] sm:text-xs text-slate-400 font-sans truncate">
+                              {cs.industry}
+                            </p>
+
+                            {/* 3 Compact Metrics Grid matching Reference Image */}
+                            <div className="grid grid-cols-3 gap-1 pt-1 min-w-0">
+                              {cs.compactMetrics?.map((cm, cIdx) => (
+                                <div key={cIdx} className="min-w-0">
+                                  <div className="font-mono font-bold text-[#B4F000] text-xs sm:text-[13px] leading-tight truncate">
+                                    {cm.val}
+                                  </div>
+                                  <div className="text-[9px] sm:text-[10px] text-slate-400 font-sans leading-tight truncate">
+                                    {cm.label}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Circle Button */}
+                          <div className="shrink-0 pl-0.5">
+                            {isActive ? (
+                              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#B4F000] text-[#080E28] flex items-center justify-center shadow-md">
+                                <ArrowRight size={14} strokeWidth={2.5} />
+                              </div>
+                            ) : (
+                              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-white/20 text-slate-400 flex items-center justify-center hover:border-white/40 hover:text-white transition-colors">
+                                <ArrowRight size={13} />
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Bottom Link in Right Column (Left-Aligned below Card 4) */}
+                  <div className="pt-1.5 text-left">
                     <button
-                      onClick={() => setActiveCaseIdx((prev) => (prev > 0 ? prev - 1 : caseStudiesList.length - 1))}
-                      className="p-0.5 hover:text-[#AFEB00]"
-                      aria-label="Previous case study"
+                      onClick={() => onNavigate('/work')}
+                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#B4F000] hover:underline cursor-pointer group"
                     >
-                      <ChevronLeft size={14} />
-                    </button>
-                    <button
-                      onClick={() => setActiveCaseIdx((prev) => (prev < caseStudiesList.length - 1 ? prev + 1 : 0))}
-                      className="p-0.5 hover:text-[#AFEB00]"
-                      aria-label="Next case study"
-                    >
-                      <ChevronRight size={14} />
+                      <span>View All Case Studies</span>
+                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                     </button>
                   </div>
                 </div>
               </div>
-
-              <div className="p-5 sm:p-6 space-y-4">
-                <div>
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-[#AFEB00] block mb-1">
-                    {activeCase.industry}
-                  </span>
-                  <h3 className="text-xl sm:text-2xl font-bold font-heading text-white">
-                    {activeCase.headline}
-                  </h3>
-                </div>
-
-                {/* Metrics Grid */}
-                <div className="grid grid-cols-3 gap-3 pt-3 border-t border-white/10">
-                  {activeCase.metrics.map((m, mIdx) => (
-                    <div key={mIdx}>
-                      <div className="text-xl sm:text-2xl font-heading font-bold text-[#AFEB00]">
-                        {m.value}
-                      </div>
-                      <div className="text-[11px] text-slate-400 font-sans leading-tight mt-0.5">
-                        {m.label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="pt-1">
-                  <button
-                    onClick={() => onNavigate('/work')}
-                    className="inline-flex items-center gap-2 text-xs font-bold text-[#AFEB00] hover:underline"
-                  >
-                    <span>Read Full Case Study</span>
-                    <ArrowRight size={14} />
-                  </button>
-                </div>
-              </div>
             </div>
-
-            {/* Right Client Switcher Tabs (Span 3) */}
-            <div className="lg:col-span-3 space-y-2 pt-2 lg:pt-0">
-              {caseStudiesList.map((cs, idx) => {
-                const isActive = activeCaseIdx === idx;
-                return (
-                  <button
-                    key={cs.id}
-                    onClick={() => setActiveCaseIdx(idx)}
-                    className={`w-full text-left p-3 rounded-xl text-sm font-semibold transition-all flex items-center justify-between ${isActive
-                        ? 'bg-[#AFEB00] text-[#0F1B64] font-bold shadow-md'
-                        : 'text-slate-400 hover:text-white hover:bg-white/5'
-                      }`}
-                  >
-                    <span>{cs.client}</span>
-                    {isActive && <ArrowRight size={14} className="text-[#0F1B64]" />}
-                  </button>
-                );
-              })}
-            </div>
-
           </div>
-
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-          07. CALL TO ACTION BANNER — MOUNTAIN SUMMIT SUNRISE
+          08. WHY BUSINESSES CHOOSE SGS (SECTION 14)
       ═══════════════════════════════════════════════════════════════════════════ */}
-      <section className="relative py-16 sm:py-22 overflow-hidden text-[#141414]">
-        {/* Full Bleed Summit Photographic Background */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/images/cta-summit.jpg"
-            alt="Ambitious Professional on Mountain Summit"
-            className="w-full h-full object-cover object-center"
-          />
-          {/* Soft Sunset/Golden Mist Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#F5FAFF]/95 via-[#F5FAFF]/80 to-transparent" />
-        </div>
-
-        <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <div className="max-w-2xl space-y-4 sm:space-y-5">
-
+      <section className="relative py-16 sm:py-24 bg-white text-[#141414] border-b border-slate-200">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 space-y-12">
+          <div className="max-w-2xl space-y-3">
             <div className="text-xs font-bold uppercase tracking-[0.2em] text-[#2033FF] font-heading">
-              LET'S BUILD WHAT'S NEXT
+              DIFFERENTIATORS
             </div>
-
-            <h2 className="text-4xl sm:text-5xl lg:text-[54px] font-heading font-bold leading-[1.08] text-[#141414] tracking-tight">
-              Ready to Build a<br />
-              Predictable Growth System?
+            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-heading font-bold leading-[1.1] text-[#080E32] tracking-tight">
+              Why Businesses Choose SGS
             </h2>
-
-            <p className="text-base sm:text-lg text-slate-800 leading-relaxed font-sans max-w-xl">
-              Whether you want more customers, a stronger brand, a scalable technology partner or strategic guidance — SGS is ready to help.
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-sans">
+              Built from the ground up to solve the real operational challenges ambitious businesses face when scaling.
             </p>
-
-            <div className="pt-2 flex flex-wrap items-center gap-4">
-              <button
-                onClick={() => onNavigate('/contact')}
-                className="group inline-flex items-center gap-2.5 rounded-xl bg-[#AFEB00] hover:bg-[#9CD100] text-[#0F1B64] font-heading font-bold text-xs sm:text-sm uppercase tracking-wider px-8 py-4 shadow-xl shadow-[#AFEB00]/25 transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
-              >
-                <span>Let's Talk About Your Goals</span>
-                <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
-              </button>
-
-              <button
-                onClick={() => onNavigate('/about')}
-                className="group inline-flex items-center gap-2 rounded-xl border border-black/30 bg-white/40 backdrop-blur-md text-[#141414] font-heading font-semibold text-xs sm:text-sm px-6 py-4 hover:bg-white/70 transition-all duration-300"
-              >
-                <div className="w-5 h-5 rounded-md bg-[#141414] flex items-center justify-center text-white">
-                  <Play size={9} className="fill-white ml-0.5" />
-                </div>
-                <span>Watch Our Story (2 min)</span>
-              </button>
-            </div>
-
-            {/* Bottom Right Geometric Brand Slogan */}
-            <div className="pt-4 flex justify-end items-center gap-2">
-              <span className="h-0.5 w-6 bg-[#2033FF]" />
-              <div className="font-heading text-lg sm:text-xl text-[#0F1B64] font-bold tracking-tight">
-                Ambitious Businesses Build A Better India
-              </div>
-            </div>
-
           </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            {whySgsPoints.map((pt) => (
+              <div
+                key={pt.num}
+                className="p-5 rounded-2xl bg-[#F5FAFF] border border-slate-200 space-y-2 hover:border-[#2033FF] transition-all shadow-xs"
+              >
+                <div className="text-xs font-mono font-bold text-[#2033FF]">{pt.num}</div>
+                <h3 className="text-base font-heading font-bold text-[#080E32] leading-snug">{pt.title}</h3>
+                <p className="text-xs text-slate-600 leading-relaxed font-sans">{pt.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          09. FINAL CONVERSION BANNER (SECTION 43)
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="relative py-18 sm:py-24 bg-[#080E32] text-white overflow-hidden text-center">
+        <div className="relative z-10 mx-auto max-w-4xl px-6 sm:px-8 lg:px-12 space-y-6">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-[#AFEB00] text-xs font-mono font-bold uppercase tracking-wider">
+            <span>START THE CONVERSATION</span>
+          </div>
+
+          <h2 className="text-3xl sm:text-5xl lg:text-[52px] font-heading font-bold leading-[1.08] text-white tracking-tight">
+            Ready to Identify Your Next Growth Opportunity?
+          </h2>
+
+          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed font-sans">
+            Tell us where your business is today, what is holding it back and where you want to go.
+          </p>
+
+          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button
+              onClick={() => onOpenProjectModal('general')}
+              className="px-8 py-4 rounded-xl bg-[#AFEB00] hover:bg-[#9CD100] text-[#0F1B64] font-heading font-bold text-xs sm:text-sm uppercase tracking-wider shadow-xl shadow-[#AFEB00]/25 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer flex items-center gap-2"
+            >
+              <span>Start a Growth Conversation</span>
+              <ArrowRight size={15} />
+            </button>
+
+            <button
+              onClick={onOpenDiagnostic}
+              className="px-7 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-heading font-semibold text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 cursor-pointer"
+            >
+              <span>Take the Growth Diagnostic</span>
+            </button>
+          </div>
+
+          <p className="text-xs text-slate-400 font-sans pt-2">
+            No obligation. Just a practical conversation about your business.
+          </p>
         </div>
       </section>
 

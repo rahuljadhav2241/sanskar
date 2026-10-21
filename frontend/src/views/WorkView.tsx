@@ -107,32 +107,32 @@ export const WorkView: React.FC<WorkViewProps> = ({
               <div className="flex items-center gap-3">
                 <span className="h-[2px] w-8 bg-[#AFEB00]" />
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#AFEB00] font-mono">
-                  Proven Client Impact &amp; Case Studies
+                  Case Studies &amp; Growth Projects
                 </span>
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold tracking-tight text-white leading-[1.08]">
-                Real Stories. <br />
+                Selected Work &amp; <br />
                 <span className="font-heading font-bold text-[#AFEB00]">
-                  Tangible Commercial Results.
+                  Growth Projects.
                 </span>
               </h1>
 
               <p className="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
-                We measure our success exclusively by client revenue acceleration, pipeline volume, and operational efficiency. Explore our verified portfolio across real estate, architecture, B2B advisory, and high-growth SMEs.
+                Real commercial solutions engineered by SGS. We measure our engagements by tangible business outcomes: qualified pipeline, conversion velocity, and operational automation.
               </p>
 
               <div className="font-heading text-base sm:text-lg text-slate-200 font-semibold tracking-tight flex items-center gap-2">
                 <span className="h-0.5 w-6 bg-[#2033FF]" />
-                <span>Validated metrics, sovereign client architectures.</span>
+                <span>Real Estate • Interiors &amp; Construction • B2B &amp; Manufacturing</span>
               </div>
 
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <button
                   onClick={() => onOpenProjectModal()}
-                  className="px-8 py-3.5 rounded-xl bg-[#AFEB00] hover:bg-[#9CD100] text-[#0F1B64] text-xs sm:text-sm font-heading font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg shadow-[#AFEB00]/25 transition-all hover:-translate-y-0.5"
+                  className="px-8 py-3.5 rounded-xl bg-[#AFEB00] hover:bg-[#9CD100] text-[#0F1B64] text-xs sm:text-sm font-heading font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg shadow-[#AFEB00]/25 transition-all hover:-translate-y-0.5 cursor-pointer"
                 >
-                  <span>Build Your Case Study</span>
+                  <span>Start a Growth Conversation</span>
                   <ArrowRight size={15} />
                 </button>
               </div>
@@ -365,19 +365,19 @@ export const WorkView: React.FC<WorkViewProps> = ({
           </div>
 
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-bold tracking-tight text-white max-w-3xl mx-auto leading-[1.08]">
-            Ready to Engineer Your Own Measurable Case Study?
+            Ready to Identify Your Next Growth Opportunity?
           </h2>
 
           <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
-            Let's evaluate your commercial bottlenecks and engineer a bespoke system built for compounding market scale.
+            Tell us where your business is today, what is holding it back and where you want to go.
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={() => onOpenProjectModal()}
-              className="px-9 py-4 rounded-xl bg-[#AFEB00] hover:bg-[#9CD100] text-[#0F1B64] text-xs sm:text-sm font-heading font-bold uppercase tracking-wider flex items-center gap-2 shadow-xl shadow-[#AFEB00]/25 transition-transform hover:-translate-y-0.5"
+              className="px-9 py-4 rounded-xl bg-[#AFEB00] hover:bg-[#9CD100] text-[#0F1B64] text-xs sm:text-sm font-heading font-bold uppercase tracking-wider flex items-center gap-2 shadow-xl shadow-[#AFEB00]/25 transition-transform hover:-translate-y-0.5 cursor-pointer"
             >
-              <span>Start a Conversation</span>
+              <span>Start a Growth Conversation</span>
               <ArrowRight size={15} />
             </button>
           </div>
@@ -482,9 +482,9 @@ export const WorkView: React.FC<WorkViewProps> = ({
                   setSelectedCaseStudy(null);
                   onOpenProjectModal(selectedCaseStudy.slug);
                 }}
-                className="px-7 py-2.5 rounded-xl bg-[#AFEB00] text-[#0F1B64] text-xs font-heading font-bold uppercase tracking-wider hover:bg-[#9CD100] transition-colors shadow-lg shadow-[#AFEB00]/20"
+                className="px-7 py-2.5 rounded-xl bg-[#AFEB00] text-[#0F1B64] text-xs font-heading font-bold uppercase tracking-wider hover:bg-[#9CD100] transition-colors shadow-lg shadow-[#AFEB00]/20 cursor-pointer"
               >
-                Inquire for Similar Architecture
+                Discuss a Similar Challenge
               </button>
             </div>
 

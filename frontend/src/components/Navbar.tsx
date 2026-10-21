@@ -395,14 +395,14 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onClick={() => { onOpenDiagnostic(); setMobileMenuOpen(false); }}
                 className="w-full py-3 px-4 rounded-xl bg-[#0B1446] border border-white/20 text-xs font-heading font-semibold text-white text-center hover:bg-white/10 hover:border-[#AFEB00] hover:text-[#AFEB00]"
               >
-                Evaluate Growth Bottlenecks
+                Growth Diagnostic
               </button>
               <button
                 onClick={() => { onOpenProjectModal(); setMobileMenuOpen(false); }}
                 className="w-full py-3 px-4 rounded-xl bg-[#AFEB00] text-[#141414] text-xs font-heading font-bold flex items-center justify-center gap-2 shadow-md shadow-[#AFEB00]/25 hover:bg-[#9CD100]"
               >
                 <PhoneCall size={14} />
-                <span>Start a Conversation</span>
+                <span>Let's Talk</span>
               </button>
             </div>
 

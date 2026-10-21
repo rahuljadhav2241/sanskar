@@ -76,6 +76,43 @@ export const industriesData: Industry[] = [
     featuredProjectSlug: 'abc-interiors'
   },
   {
+    id: 'b2b-manufacturing',
+    slug: 'b2b-manufacturing',
+    title: 'B2B & Manufacturing',
+    shortDesc: 'Digital capability showcases, SEO & LinkedIn lead generation, RFQ funnels, and CRM sales pipelines.',
+    overview: 'Manufacturers and B2B industrial companies need to be discoverable, communicate their capabilities clearly and generate qualified enquiries from decision-makers. SGS builds modern B2B websites, targeted search & outreach funnels, and sales pipelines tailored to complex buying committees.',
+    commonChallenges: [
+      {
+        title: 'Low online discoverability',
+        description: 'Dependence on traditional dealer networks or trade fairs with negligible inbound digital pipeline.'
+      },
+      {
+        title: 'Unclear capability presentation',
+        description: 'Outdated websites that fail to demonstrate engineering credentials, certifications, or production capacity.'
+      },
+      {
+        title: 'Untracked RFQs & inquiry leakage',
+        description: 'High-value RFQs arriving via unmonitored inboxes without systematic qualification and sales follow-up.'
+      }
+    ],
+    sgsSolution: {
+      approach: 'We engineer a comprehensive B2B growth engine: capability-led modern websites, high-intent Google search, LinkedIn executive outreach, and streamlined RFQ management systems.',
+      operatingLayer: [
+        'Modern B2B capability website & digital product catalogue',
+        'High-intent Google Search and industrial SEO architecture',
+        'LinkedIn lead generation & targeted email outreach',
+        'RFQ generation workflows, CRM pipeline, and business dashboards'
+      ],
+      outcomes: [
+        'Predictable flow of qualified RFQs from verified decision-makers',
+        'Shortened quotation-to-contract conversion cycle',
+        'Clear visibility into sales pipeline velocity and customer acquisition costs'
+      ]
+    },
+    relevantServices: ['digital-growth', 'technology', 'business-consulting'],
+    featuredProjectSlug: 'novacommerce'
+  },
+  {
     id: 'professional-services',
     slug: 'professional-services',
     title: 'Professional Services & Advisory',

@@ -33,6 +33,7 @@ const fadeUp = {
 const industryPhotos: Record<string, string> = {
   'real-estate': 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
   'interior-design': 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+  'b2b-manufacturing': 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80',
   'professional-services': 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80',
   'startups': 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80',
   'smes': 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80',
@@ -78,41 +79,40 @@ export const IndustriesView: React.FC<IndustriesViewProps> = ({
               <div className="flex items-center gap-3">
                 <span className="h-[2px] w-8 bg-[#AFEB00]" />
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#AFEB00] font-mono">
-                  Sector-Specific Architectures
+                  Industry-Specific Growth Systems
                 </span>
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold tracking-tight text-white leading-[1.08]">
-                Tailored Growth Systems <br />
-                Engineered For{" "}
+                Industry-Specific <br />
                 <span className="font-heading font-bold text-[#AFEB00]">
-                  Your Industry
+                  Growth Systems.
                 </span>
               </h1>
 
               <p className="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
-                Generic growth tactics fail because commercial realities differ across sectors. Real estate requires high-ticket trust; B2B tech demands demo velocity; luxury interiors demand sensory prestige. We build bespoke systems for your domain.
+                Every industry has different customers, sales cycles and operational challenges. SGS builds growth and technology systems around how your business actually operates.
               </p>
 
               <div className="font-heading text-base sm:text-lg text-slate-200 font-semibold tracking-tight flex items-center gap-2">
                 <span className="h-0.5 w-6 bg-[#2033FF]" />
-                <span>Real Businesses. Real Commercial Impact.</span>
+                <span>Real Estate • Interiors &amp; Construction • B2B &amp; Manufacturing</span>
               </div>
 
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <button
                   onClick={() => onOpenProjectModal(selectedIndustrySlug)}
-                  className="px-8 py-3.5 rounded-xl bg-[#AFEB00] hover:bg-[#9CD100] text-[#0F1B64] text-xs sm:text-sm font-heading font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg shadow-[#AFEB00]/25 transition-all hover:-translate-y-0.5"
+                  className="px-8 py-3.5 rounded-xl bg-[#AFEB00] hover:bg-[#9CD100] text-[#0F1B64] text-xs sm:text-sm font-heading font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg shadow-[#AFEB00]/25 transition-all hover:-translate-y-0.5 cursor-pointer"
                 >
-                  <span>Build For {currentIndustry.title}</span>
+                  <span>Start a Growth Conversation</span>
                   <ArrowRight size={15} />
                 </button>
 
                 <button
                   onClick={() => onNavigate('/work')}
-                  className="px-6 py-3 rounded-xl bg-[#0A1245] hover:bg-[#0F1B64] text-white border border-white/20 text-xs sm:text-sm font-heading font-bold uppercase tracking-wider transition-all"
+                  className="px-6 py-3 rounded-xl bg-[#0A1245] hover:bg-[#0F1B64] text-white border border-white/20 text-xs sm:text-sm font-heading font-bold uppercase tracking-wider transition-all cursor-pointer"
                 >
-                  Explore Verified Work
+                  <span>Explore Selected Work</span>
                 </button>
               </div>
             </motion.div>
@@ -395,7 +395,7 @@ export const IndustriesView: React.FC<IndustriesViewProps> = ({
               onClick={() => onOpenProjectModal(selectedIndustrySlug)}
               className="px-9 py-4 rounded-xl bg-[#AFEB00] hover:bg-[#9CD100] text-[#0F1B64] text-xs sm:text-sm font-heading font-bold uppercase tracking-wider flex items-center gap-2 shadow-xl shadow-[#AFEB00]/25 transition-transform hover:-translate-y-0.5"
             >
-              <span>Start a Conversation</span>
+              <span>Start a Growth Conversation</span>
               <ArrowRight size={15} />
             </button>
           </div>

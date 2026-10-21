@@ -26,9 +26,9 @@ export default function Hero({ onNavigate }: HeroProps) {
             {/* Full-bleed Photographic Background */}
             <div className="absolute inset-0 z-0">
                 <img
-                    src="/images/hero-skyline.jpg"
-                    alt="Sanskar Growth Solutions Skyline Office"
-                    className="h-full w-full object-cover object-center brightness-[0.9] contrast-[1.05]"
+                    src="/images/hero-building.jpg"
+                    alt="Sanskar Growth Solutions Commercial Architecture"
+                    className="h-full w-full object-cover object-center brightness-[0.85] contrast-[1.05]"
                 />
                 {/* Cinematic Editorial Overlays */}
                 <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/30" />
@@ -58,7 +58,7 @@ export default function Hero({ onNavigate }: HeroProps) {
                         className="flex items-center gap-3 text-xs tracking-[0.2em] uppercase font-bold text-[#AFEB00] mb-5 font-mono"
                     >
                         <span className="h-[2px] w-6 bg-[#AFEB00]" />
-                        <span>Your Growth. Our Mission.</span>
+                        <span>Strategy • Technology • Digital Growth • Automation</span>
                     </motion.div>
 
                     {/* Bold Space Grotesk Headline */}
@@ -68,9 +68,9 @@ export default function Hero({ onNavigate }: HeroProps) {
                         transition={{ duration: 0.8, delay: 0.1 }}
                         className="text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-heading font-bold leading-[1.04] tracking-tight text-white"
                     >
-                        Digital Growth<br />
-                        for <span className="text-[#AFEB00]">Ambitious</span><br />
-                        Enterprises.
+                        Build Systems<br className="hidden sm:inline" />
+                        {" "}That Drive<br />
+                        <span className="text-[#AFEB00]">Business Growth.</span>
                     </motion.h1>
 
                     {/* Subtitle */}
@@ -80,7 +80,7 @@ export default function Hero({ onNavigate }: HeroProps) {
                         transition={{ duration: 0.7, delay: 0.25 }}
                         className="mt-6 text-base sm:text-lg text-slate-200/90 leading-relaxed max-w-xl font-sans font-normal"
                     >
-                        One strategic partner delivering integrated technology, marketing, branding, business media, consulting, and AI solutions to build, grow, and scale your business.
+                        Sanskar Growth Solutions helps ambitious businesses generate demand, convert opportunities and build technology-enabled systems for scalable growth.
                     </motion.p>
 
                     {/* CTAs */}
@@ -88,25 +88,29 @@ export default function Hero({ onNavigate }: HeroProps) {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7, delay: 0.4 }}
-                        className="mt-8 sm:mt-10 flex flex-wrap items-center gap-4"
+                        className="mt-8 sm:mt-10 space-y-4"
                     >
-                        <button
-                            onClick={() => handleNav("/contact")}
-                            className="group inline-flex items-center gap-2.5 rounded-xl bg-[#AFEB00] hover:bg-[#9CD100] text-[#141414] font-heading font-bold text-xs sm:text-sm px-7 py-3.5 shadow-xl shadow-[#AFEB00]/25 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
-                        >
-                            <span>Start a Conversation</span>
-                            <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1" />
-                        </button>
+                        <div className="flex flex-wrap items-center gap-4">
+                            <button
+                                onClick={() => handleNav("/contact")}
+                                className="group inline-flex items-center gap-2.5 rounded-xl bg-[#AFEB00] hover:bg-[#9CD100] text-[#141414] font-heading font-bold text-xs sm:text-sm px-7 py-3.5 shadow-xl shadow-[#AFEB00]/25 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+                            >
+                                <span>Start a Growth Conversation</span>
+                                <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1" />
+                            </button>
 
-                        <button
-                            onClick={() => handleNav("/work")}
-                            className="group inline-flex items-center gap-2.5 rounded-xl border border-white/30 bg-black/25 backdrop-blur-md text-white font-heading font-semibold text-xs sm:text-sm px-6 py-3.5 hover:bg-white/15 hover:border-white/50 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
-                        >
-                            <span>See Our Work</span>
-                            <div className="flex items-center justify-center w-5 h-5 rounded-lg bg-white/20 group-hover:bg-white/30 transition-colors">
-                                <Play size={10} className="fill-white ml-0.5" />
-                            </div>
-                        </button>
+                            <button
+                                onClick={() => handleNav("/solutions")}
+                                className="group inline-flex items-center gap-2.5 rounded-xl border border-white/30 bg-black/25 backdrop-blur-md text-white font-heading font-semibold text-xs sm:text-sm px-6 py-3.5 hover:bg-white/15 hover:border-white/50 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+                            >
+                                <span>Explore Our Solutions</span>
+                            </button>
+                        </div>
+
+                        {/* Small trust line below CTA */}
+                        <div className="text-xs sm:text-[13px] text-slate-300 font-sans pt-1">
+                            Built for <span className="text-white font-semibold">Real Estate</span> • <span className="text-white font-semibold">Interiors &amp; Construction</span> • <span className="text-white font-semibold">B2B &amp; Manufacturing</span>
+                        </div>
                     </motion.div>
                 </div>
             </div>

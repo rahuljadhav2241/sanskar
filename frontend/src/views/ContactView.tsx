@@ -26,7 +26,9 @@ export const ContactView: React.FC<ContactViewProps> = ({
   const [workEmail, setWorkEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [website, setWebsite] = useState('');
-  const [selectedService, setSelectedService] = useState('digital-growth');
+  const [industry, setIndustry] = useState('real-estate');
+  const [selectedService, setSelectedService] = useState('digital-marketing');
+  const [businessStage, setBusinessStage] = useState('growing-business');
   const [budgetRange, setBudgetRange] = useState('₹1L – ₹3L / Project or Mo');
   const [projectTimeline, setProjectTimeline] = useState('Within 30 Days');
   const [message, setMessage] = useState('');
@@ -64,7 +66,7 @@ export const ContactView: React.FC<ContactViewProps> = ({
         workEmail,
         phone,
         website,
-        selectedService,
+        selectedService: `${industry} | ${selectedService} | ${businessStage}`,
         budgetRange,
         projectTimeline,
         message,
@@ -108,24 +110,24 @@ export const ContactView: React.FC<ContactViewProps> = ({
               <div className="flex items-center gap-3">
                 <span className="h-[2px] w-8 bg-[#AFEB00]" />
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#AFEB00] font-mono">
-                  Executive Engagement • Pune, India
+                  Direct Partner Consultation • Pune, India
                 </span>
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold tracking-tight text-white leading-[1.08]">
-                Architecting Your Next Stage of{" "}
+                Start a Growth Conversation with{" "}
                 <span className="font-heading font-bold text-[#AFEB00]">
-                  Market Dominance
+                  SGS
                 </span>
               </h1>
 
               <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
-                Tell us what your enterprise is aiming to accomplish. We will design the exact operational stack, brand capital, and technical leverage required to outperform your sector.
+                Tell us where your business is today, what is holding it back, and where you want to go. We will evaluate your commercial bottlenecks and discuss the right systems for growth.
               </p>
 
               <div className="font-heading text-base sm:text-lg text-slate-200 font-semibold tracking-tight flex items-center gap-2">
                 <span className="h-0.5 w-6 bg-[#2033FF]" />
-                <span>Direct partner consultation, zero delegation.</span>
+                <span>No obligation. Just a practical conversation about your business.</span>
               </div>
             </motion.div>
 
@@ -158,7 +160,7 @@ export const ContactView: React.FC<ContactViewProps> = ({
 
               <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3.5 py-1.5 rounded-lg border border-white/20 text-white font-mono text-[11px] font-semibold flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#AFEB00] animate-pulse" />
-                <span>NDA Protected</span>
+                <span>Confidential</span>
               </div>
             </motion.div>
 
@@ -176,11 +178,11 @@ export const ContactView: React.FC<ContactViewProps> = ({
             </div>
             <div>
               <div className="text-2xl sm:text-3xl font-heading font-bold text-white">Pune HQ</div>
-              <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">Global Capabilities</div>
+              <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">Working Across India &amp; Global</div>
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-heading font-bold text-[#AFEB00]">Strict NDA</div>
-              <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">Data Confidentiality</div>
+              <div className="text-2xl sm:text-3xl font-heading font-bold text-[#AFEB00]">Confidential</div>
+              <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">Treated Confidentially</div>
             </div>
           </div>
 
@@ -198,7 +200,7 @@ export const ContactView: React.FC<ContactViewProps> = ({
             {/* Left Column: Direct Advisory Channels */}
             <div className="lg:col-span-5 space-y-6">
               <div className="relative overflow-hidden p-6 sm:p-7 rounded-2xl bg-white border border-slate-200 space-y-4 shadow-xl text-[#141414]">
-                <h2 className="text-2xl font-heading font-bold text-[#141414]">Direct Advisory Channels</h2>
+                <h2 className="text-2xl font-heading font-bold text-[#141414]">Direct Contact Channels</h2>
 
                 <div className="space-y-3.5 text-sm text-slate-700">
                   <div className="flex items-start gap-3.5">
@@ -220,7 +222,7 @@ export const ContactView: React.FC<ContactViewProps> = ({
                     <div>
                       <span className="text-xs text-slate-500 block font-mono">Headquarters:</span>
                       <span className="font-semibold text-[#141414]">
-                        Kalyani Nagar / Baner, Pune, Maharashtra, India
+                        Pune, Maharashtra, India
                       </span>
                     </div>
                   </div>
@@ -230,9 +232,9 @@ export const ContactView: React.FC<ContactViewProps> = ({
                       <Clock size={18} />
                     </div>
                     <div>
-                      <span className="text-xs text-slate-500 block font-mono">Partner Response SLA:</span>
+                      <span className="text-xs text-slate-500 block font-mono">Response Velocity:</span>
                       <span className="font-semibold text-[#141414]">
-                        Within 1 Business Day (Guaranteed)
+                        Within 1 Business Day
                       </span>
                     </div>
                   </div>
@@ -250,16 +252,16 @@ export const ContactView: React.FC<ContactViewProps> = ({
                   Interactive Assessment
                 </span>
                 <h3 className="text-xl font-heading font-bold text-[#141414]">
-                  Take the 60-Second Growth Diagnostic
+                  Take the Growth Diagnostic
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans">
-                  Pinpoint whether your enterprise bottleneck lies within ATTRACT, CONVERT, or SCALE before our briefing call.
+                  Identify your primary business growth bottleneck across ATTRACT, CONVERT, or SCALE before our briefing call.
                 </p>
                 <button
                   onClick={onOpenDiagnostic}
                   className="text-xs font-heading font-bold uppercase tracking-wider text-[#2033FF] hover:text-[#141414] flex items-center gap-1.5 pt-1"
                 >
-                  <span>Launch Interactive Diagnostic</span>
+                  <span>Take the Growth Diagnostic</span>
                   <ArrowRight size={14} />
                 </button>
               </div>
@@ -277,10 +279,10 @@ export const ContactView: React.FC<ContactViewProps> = ({
 
                     <div className="space-y-2">
                       <h3 className="text-2xl sm:text-3xl font-heading font-bold text-[#141414]">
-                        Consultation Brief Received
+                        Growth Brief Received
                       </h3>
                       <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed font-sans">
-                        Thank you, <strong className="text-[#141414]">{fullName}</strong>. Your inquiry on behalf of <strong className="text-[#141414]">{company}</strong> has been assigned to a senior managing partner.
+                        Thank you, <strong className="text-[#141414]">{fullName}</strong>. Your inquiry on behalf of <strong className="text-[#141414]">{company}</strong> has been received by our senior team.
                       </p>
                     </div>
 
@@ -290,12 +292,12 @@ export const ContactView: React.FC<ContactViewProps> = ({
                         <span className="text-[#141414] font-semibold">{workEmail}</span>
                       </div>
                       <div className="flex justify-between py-1 border-b border-slate-200">
-                        <span className="text-slate-500 font-mono">Selected Solution:</span>
-                        <span className="text-[#2033FF] capitalize font-bold">{selectedService}</span>
+                        <span className="text-slate-500 font-mono">Industry:</span>
+                        <span className="text-[#2033FF] capitalize font-bold">{industry}</span>
                       </div>
                       <div className="flex justify-between py-1">
                         <span className="text-slate-500 font-mono">Next Step:</span>
-                        <span className="text-[#2033FF] font-bold">Initial Discovery Brief via Email</span>
+                        <span className="text-[#2033FF] font-bold">Initial Review &amp; Response via Email / Call</span>
                       </div>
                     </div>
 
@@ -309,8 +311,8 @@ export const ContactView: React.FC<ContactViewProps> = ({
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4 text-xs sm:text-sm">
                     <div className="mb-4">
-                      <h3 className="text-2xl font-heading font-bold text-[#141414]">Project Consultation Brief</h3>
-                      <p className="text-xs text-slate-500 mt-1 font-sans">Provide your goals below for a prioritized senior partner evaluation within 24 hours.</p>
+                      <h3 className="text-2xl font-heading font-bold text-[#141414]">Start a Growth Conversation</h3>
+                      <p className="text-xs text-slate-500 mt-1 font-sans">Tell us about your business to schedule a practical consultation with our team.</p>
                     </div>
 
                     {/* Name & Company */}
@@ -332,13 +334,13 @@ export const ContactView: React.FC<ContactViewProps> = ({
 
                       <div>
                         <label className="block text-[#141414] font-semibold mb-1">
-                          Company / Firm Name <span className="text-rose-500">*</span>
+                          Company / Business Name <span className="text-rose-500">*</span>
                         </label>
                         <input
                           type="text"
                           value={company}
                           onChange={(e) => setCompany(e.target.value)}
-                          placeholder="e.g. Kulkarni Architecture"
+                          placeholder="e.g. Kulkarni Spaces"
                           className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border text-[#141414] placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#2033FF] focus:ring-1 focus:ring-[#2033FF] transition-colors font-sans ${errors.company ? 'border-rose-500 bg-rose-50' : 'border-slate-200'
                             }`}
                         />
@@ -356,7 +358,7 @@ export const ContactView: React.FC<ContactViewProps> = ({
                           type="email"
                           value={workEmail}
                           onChange={(e) => setWorkEmail(e.target.value)}
-                          placeholder="anand@kulkarni.com"
+                          placeholder="anand@company.com"
                           className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border text-[#141414] placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#2033FF] focus:ring-1 focus:ring-[#2033FF] transition-colors font-sans ${errors.workEmail ? 'border-rose-500 bg-rose-50' : 'border-slate-200'
                             }`}
                         />
@@ -379,20 +381,58 @@ export const ContactView: React.FC<ContactViewProps> = ({
                       </div>
                     </div>
 
-                    {/* Service */}
+                    {/* Dropdown 1: Industry & Dropdown 2: Requirement */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-[#141414] font-semibold mb-1">Industry</label>
+                        <select
+                          value={industry}
+                          onChange={(e) => setIndustry(e.target.value)}
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-[#141414] focus:outline-none focus:bg-white focus:border-[#2033FF] focus:ring-1 focus:ring-[#2033FF] font-sans"
+                        >
+                          <option value="Real Estate">Real Estate</option>
+                          <option value="Interior & Construction">Interior &amp; Construction</option>
+                          <option value="B2B & Manufacturing">B2B &amp; Manufacturing</option>
+                          <option value="Professional Services">Professional Services</option>
+                          <option value="Technology & SaaS">Technology &amp; SaaS</option>
+                          <option value="SME">SME</option>
+                          <option value="Other">Other</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label className="block text-[#141414] font-semibold mb-1">Requirement</label>
+                        <select
+                          value={selectedService}
+                          onChange={(e) => setSelectedService(e.target.value)}
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-[#141414] focus:outline-none focus:bg-white focus:border-[#2033FF] focus:ring-1 focus:ring-[#2033FF] font-sans"
+                        >
+                          <option value="Digital Marketing">Digital Marketing</option>
+                          <option value="Lead Generation">Lead Generation</option>
+                          <option value="Website">Website</option>
+                          <option value="Software / SaaS">Software / SaaS</option>
+                          <option value="CRM">CRM</option>
+                          <option value="Automation">Automation</option>
+                          <option value="Branding">Branding</option>
+                          <option value="Business Consulting">Business Consulting</option>
+                          <option value="Digital Transformation">Digital Transformation</option>
+                          <option value="Other">Other</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    {/* Dropdown 3: Business Stage */}
                     <div>
-                      <label className="block text-[#141414] font-semibold mb-1">Primary Growth Requirement</label>
+                      <label className="block text-[#141414] font-semibold mb-1">Approximate Business Stage</label>
                       <select
-                        value={selectedService}
-                        onChange={(e) => setSelectedService(e.target.value)}
+                        value={businessStage}
+                        onChange={(e) => setBusinessStage(e.target.value)}
                         className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-[#141414] focus:outline-none focus:bg-white focus:border-[#2033FF] focus:ring-1 focus:ring-[#2033FF] font-sans"
                       >
-                        <option value="digital-growth">Digital Growth &amp; Paid Ads</option>
-                        <option value="technology">Modern Web &amp; Custom Software</option>
-                        <option value="brand-creative">Brand Authority &amp; Design</option>
-                        <option value="business-media">Business Media &amp; PR</option>
-                        <option value="business-consulting">Strategic Consulting</option>
-                        <option value="all-in-one">Complete Operating Stack</option>
+                        <option value="New Business">New Business</option>
+                        <option value="Growing Business">Growing Business</option>
+                        <option value="Established Business">Established Business</option>
+                        <option value="Enterprise">Enterprise</option>
                       </select>
                     </div>
 
@@ -403,7 +443,7 @@ export const ContactView: React.FC<ContactViewProps> = ({
                         rows={3}
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
-                        placeholder="Briefly describe current bottlenecks, revenue targets, or timeline..."
+                        placeholder="Briefly describe where your business is today and what you are trying to achieve..."
                         className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-[#141414] placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#2033FF] focus:ring-1 focus:ring-[#2033FF] font-sans"
                       />
                     </div>
@@ -416,31 +456,30 @@ export const ContactView: React.FC<ContactViewProps> = ({
                         checked={consent}
                         onChange={(e) => setConsent(e.target.checked)}
                         className="mt-0.5 rounded border-slate-300 bg-white text-[#2033FF] focus:ring-[#2033FF]"
-                      >
-                      </input>
+                      />
                       <label htmlFor="consent-box" className="text-[11px] text-slate-600 leading-snug font-sans">
-                        I agree to receive communications regarding this project inquiry from Sanskar Growth Solutions.
+                        I agree to receive communications regarding this inquiry from Sanskar Growth Solutions.
                       </label>
                     </div>
                     {errors.consent && <p className="text-[11px] text-rose-500">{errors.consent}</p>}
 
                     {/* Submit Button */}
-                    <div className="pt-3 border-t border-slate-200 flex items-center justify-between">
+                    <div className="pt-3 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                       <span className="text-[11px] text-slate-500 flex items-center gap-1 font-sans">
                         <ShieldCheck size={14} className="text-[#2033FF]" />
-                        Confidential &amp; NDA Protected
+                        Your project information is treated as confidential.
                       </span>
 
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="px-8 py-3.5 rounded-xl bg-[#AFEB00] hover:bg-[#9CD100] text-[#0F1B64] text-xs font-heading font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg shadow-[#AFEB00]/25 hover:-translate-y-0.5 active:scale-95 disabled:opacity-50 transition-all"
+                        className="px-8 py-3.5 rounded-xl bg-[#AFEB00] hover:bg-[#9CD100] text-[#0F1B64] text-xs font-heading font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-[#AFEB00]/25 hover:-translate-y-0.5 active:scale-95 disabled:opacity-50 transition-all"
                       >
                         {isSubmitting ? (
-                          <span>Transmitting Brief...</span>
+                          <span>Submitting...</span>
                         ) : (
                           <>
-                            <span>Submit Consultation Brief</span>
+                            <span>Start a Growth Conversation</span>
                             <ArrowRight size={14} />
                           </>
                         )}
@@ -477,11 +516,11 @@ export const ContactView: React.FC<ContactViewProps> = ({
           </div>
 
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-bold tracking-tight text-white max-w-3xl mx-auto leading-[1.08]">
-            Let's Architect Your Next Phase of Growth.
+            Let's Build Your Next Phase of Growth.
           </h2>
 
           <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
-            Enterprise growth systems engineered for measurable revenue and market dominance.
+            Business growth systems engineered for measurable revenue and scalable market success.
           </p>
         </div>
       </section>

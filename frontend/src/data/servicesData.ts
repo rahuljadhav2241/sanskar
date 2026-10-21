@@ -63,7 +63,7 @@ export const servicesData: ServiceItem[] = [
       'AI-Powered Workflow Automation'
     ],
     deliverables: [
-      'Enterprise-Grade Web Application',
+      'Business-Ready Web Platform',
       'Unified CRM Data Pipeline & Webhook Integration',
       'Automated Lead Routing & Notification Bot',
       'Custom Operational Management Dashboards',

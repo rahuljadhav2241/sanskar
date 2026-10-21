@@ -62,11 +62,14 @@ export const Footer: React.FC<FooterProps> = ({
 
             <div className="space-y-2">
               <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#AFEB00]">
-                Your Growth. Our Mission.
+                Business Growth &amp; Technology Partner
               </div>
               <p className="text-xs sm:text-[13px] leading-relaxed text-slate-300 font-sans">
-                One strategic partner for technology, marketing, branding, media, and business growth.
+                Sanskar Growth Solutions — Business Growth Through Technology, Marketing &amp; Innovation.
               </p>
+              <div className="text-[11px] font-mono text-slate-400">
+                Strategy • Technology • Digital Growth
+              </div>
             </div>
 
             {/* Signature Brand Motifs */}
@@ -113,83 +116,89 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
           </div>
 
-          {/* Col 2: Quick Links (Span 2) */}
+          {/* Col 2: Solutions (Span 2) */}
           <div className="space-y-4 lg:col-span-2">
             <h5 className="text-xs font-bold uppercase tracking-[0.16em] text-[#AFEB00] font-heading">
-              Quick Links
-            </h5>
-            <ul className="space-y-2 text-xs sm:text-[13px] text-slate-300 font-sans">
-              {['Home', 'About', 'Solutions', 'Industries', 'Work', 'Insights', 'Careers', 'Contact'].map((link) => {
-                const path = link === 'Home' ? '/' : `/${link.toLowerCase()}`;
-                return (
-                  <li key={link}>
-                    <button
-                      onClick={() => onNavigate(path)}
-                      className="hover:text-white hover:translate-x-0.5 transition-all text-left"
-                    >
-                      {link}
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-
-          {/* Col 3: Our Solutions (Span 2) */}
-          <div className="space-y-4 lg:col-span-2">
-            <h5 className="text-xs font-bold uppercase tracking-[0.16em] text-[#AFEB00] font-heading">
-              Our Solutions
+              Solutions
             </h5>
             <ul className="space-y-2 text-xs sm:text-[13px] text-slate-300 font-sans">
               {[
-                { title: 'Digital Growth', slug: 'digital-growth' },
-                { title: 'Technology Solutions', slug: 'technology' },
-                { title: 'Brand & Creative', slug: 'brand-creative' },
-                { title: 'Business Media & Authority', slug: 'business-media' },
-                { title: 'Business Consulting', slug: 'business-consulting' },
-              ].map((s) => (
-                <li key={s.slug}>
+                { title: 'Digital Growth', path: '/solutions/digital-growth' },
+                { title: 'Technology Solutions', path: '/solutions/technology' },
+                { title: 'Brand & Creative', path: '/solutions/brand-creative' },
+                { title: 'Automation', path: '/solutions/technology' },
+                { title: 'Business Consulting', path: '/solutions/business-consulting' },
+              ].map((item) => (
+                <li key={item.title}>
                   <button
-                    onClick={() => onNavigate(`/solutions/${s.slug}`)}
+                    onClick={() => onNavigate(item.path)}
                     className="hover:text-white hover:translate-x-0.5 transition-all text-left"
                   >
-                    {s.title}
+                    {item.title}
                   </button>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Col 4: Contact Us (Span 2) */}
+          {/* Col 3: Industries (Span 2) */}
           <div className="space-y-4 lg:col-span-2">
             <h5 className="text-xs font-bold uppercase tracking-[0.16em] text-[#AFEB00] font-heading">
-              Contact Us
+              Industries
             </h5>
-            <div className="space-y-3 text-xs sm:text-[13px] text-slate-300 font-sans">
-              <div className="flex items-start gap-2">
-                <MapPin size={14} className="text-[#AFEB00] mt-0.5 shrink-0" />
-                <span>Pune, Maharashtra, India</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <Mail size={14} className="text-[#AFEB00] mt-0.5 shrink-0" />
-                <a href="mailto:hello@sanskargrowthsolutions.com" className="hover:text-white break-all">
-                  hello@sanskargrowthsolutions.com
-                </a>
-              </div>
-              <div className="flex items-start gap-2">
-                <Phone size={14} className="text-[#AFEB00] mt-0.5 shrink-0" />
-                <span>+91 98765 43210</span>
-              </div>
-            </div>
+            <ul className="space-y-2 text-xs sm:text-[13px] text-slate-300 font-sans">
+              {[
+                'Real Estate',
+                'Interior & Construction',
+                'B2B & Manufacturing',
+                'Professional Services',
+                'Technology & SaaS',
+                'SMEs'
+              ].map((ind) => (
+                <li key={ind}>
+                  <button
+                    onClick={() => onNavigate('/industries')}
+                    className="hover:text-white hover:translate-x-0.5 transition-all text-left"
+                  >
+                    {ind}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Col 4: Company (Span 2) */}
+          <div className="space-y-4 lg:col-span-2">
+            <h5 className="text-xs font-bold uppercase tracking-[0.16em] text-[#AFEB00] font-heading">
+              Company
+            </h5>
+            <ul className="space-y-2 text-xs sm:text-[13px] text-slate-300 font-sans">
+              {[
+                { title: 'About', path: '/about' },
+                { title: 'Work & Proof', path: '/work' },
+                { title: 'Insights', path: '/insights' },
+                { title: 'Careers', path: '/careers' },
+                { title: 'Contact', path: '/contact' }
+              ].map((link) => (
+                <li key={link.title}>
+                  <button
+                    onClick={() => onNavigate(link.path)}
+                    className="hover:text-white hover:translate-x-0.5 transition-all text-left"
+                  >
+                    {link.title}
+                  </button>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Col 5: Join Our Insights (Span 2) */}
           <div className="space-y-4 lg:col-span-2">
             <h5 className="text-xs font-bold uppercase tracking-[0.16em] text-[#AFEB00] font-heading">
-              Join Our Insights
+              Growth Insights
             </h5>
             <p className="text-xs leading-relaxed text-slate-300 font-sans">
-              Get growth ideas, industry insights and curated stories.
+              Get growth ideas, industry analysis, and technology strategies.
             </p>
 
             {subscribed ? (
@@ -204,7 +213,7 @@ export const Footer: React.FC<FooterProps> = ({
                     type="email"
                     value={newsletterEmail}
                     onChange={(e) => setNewsletterEmail(e.target.value)}
-                    placeholder="Enter your email"
+                    placeholder="Enter work email"
                     className="w-full bg-transparent px-2 text-xs text-white placeholder-slate-400 outline-none"
                     required
                   />
@@ -218,6 +227,10 @@ export const Footer: React.FC<FooterProps> = ({
                 </div>
               </form>
             )}
+
+            <div className="pt-2 text-[11px] text-slate-400 font-sans">
+              Serving Businesses from Pune • Working Across India &amp; Global Markets
+            </div>
           </div>
 
         </div>
@@ -237,22 +250,17 @@ export const Footer: React.FC<FooterProps> = ({
               Terms of Service
             </button>
             <span>|</span>
-            <button onClick={() => onNavigate('/legal/privacy')} className="hover:text-white transition-colors">
-              Sitemap
+            <button onClick={() => onNavigate('/contact')} className="hover:text-white transition-colors">
+              Contact
             </button>
           </div>
 
-          {/* Indian Flag Accent & Slogan */}
+          {/* Operational Status Line */}
           <div className="flex items-center gap-2 text-slate-300">
-            {/* Minimalist SVG Indian Flag Tri-color */}
-            <div className="w-4 h-3 rounded-xs overflow-hidden flex flex-col border border-white/20">
-              <div className="h-1 bg-[#FF9933] w-full" />
-              <div className="h-1 bg-white w-full flex items-center justify-center">
-                <div className="w-0.5 h-0.5 rounded-full bg-[#000080]" />
-              </div>
-              <div className="h-1 bg-[#138808] w-full" />
-            </div>
-            <span className="font-medium text-xs text-white/90">Built for a Brighter India</span>
+            <span className="w-2 h-2 rounded-full bg-[#AFEB00] animate-pulse" />
+            <span className="font-medium text-xs text-white/90">
+              Serving Businesses from Pune • Working Across India &amp; Global Markets
+            </span>
           </div>
         </div>
 

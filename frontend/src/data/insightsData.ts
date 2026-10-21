@@ -6,10 +6,10 @@ export const insightsData: InsightArticle[] = [
     slug: 'why-your-website-isnt-generating-leads',
     title: 'Why Your Website Isn\'t Generating Leads (And How to Fix the Operating Layer)',
     excerpt: 'Most business websites suffer from an architectural disconnect: they treat web design as a digital brochure rather than a calibrated conversion mechanism connected to sales workflows.',
-    category: 'Digital Transformation',
+    category: 'Growth',
     author: {
-      name: 'Ritesh Jawale',
-      role: 'Growth Strategist, SGS'
+      name: 'Rahul Jadhav',
+      role: 'Founder & Director, SGS'
     },
     publishedDate: 'August 2026',
     readTime: '6 min read',
@@ -58,7 +58,7 @@ At Sanskar Growth Solutions, we structure every web build around our **ATTRACT â
     slug: 'meta-ads-vs-google-ads-commercial-guide',
     title: 'Meta Ads vs. Google Ads: Choosing the Right Acquisition Channel for Your Growth Stage',
     excerpt: 'Understanding the fundamental distinction between Intent-Driven Search Demand and Discovery-Driven Audience Creation to maximize return on advertising spend.',
-    category: 'Marketing',
+    category: 'Growth',
     author: {
       name: 'SGS Performance Team',
       role: 'Growth & Acquisition'
@@ -169,10 +169,10 @@ We engineer **lean, purpose-built CRM architectures** tailored to your sales pro
     slug: '7-ways-ai-can-reduce-manual-business-operations',
     title: '7 Practical Ways AI & Automation Can Eliminate Manual Business Operations',
     excerpt: 'Cutting through the artificial hype to deploy realistic, high-ROI automations that save hundreds of administrative hours each month.',
-    category: 'AI & Automation',
+    category: 'Technology',
     author: {
-      name: 'Ritesh Jawale',
-      role: 'Growth Strategist, SGS'
+      name: 'SGS Automation Team',
+      role: 'Technology & AI Architecture'
     },
     publishedDate: 'June 2026',
     readTime: '7 min read',
@@ -218,7 +218,7 @@ Bridge legacy ERPs, payment gateways, and modern communication tools through cus
     slug: 'what-makes-a-high-converting-business-website',
     title: 'What Truly Makes a High-Converting B2B & Growth Website?',
     excerpt: 'The anatomical breakdown of an enterprise-grade website that earns trust, educates prospects, and consistently drives high-value inquiries.',
-    category: 'Branding',
+    category: 'Growth',
     author: {
       name: 'SGS Design & Strategy',
       role: 'Brand & UX Architecture'
@@ -267,10 +267,10 @@ Every 1-second delay in page load time degrades conversion rates. A high-convert
     slug: 'digital-transformation-for-smes',
     title: 'Demystifying Digital Transformation for Small & Medium Enterprises (SMEs)',
     excerpt: 'How mid-market companies can systematically modernize their marketing, sales, and operations without costly disruptions or million-dollar budgets.',
-    category: 'Business Growth',
+    category: 'Industry',
     author: {
-      name: 'Ritesh Jawale',
-      role: 'Growth Strategist, SGS'
+      name: 'Rahul Jadhav',
+      role: 'Founder & Director, SGS'
     },
     publishedDate: 'May 2026',
     readTime: '7 min read',

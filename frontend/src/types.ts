@@ -76,7 +76,7 @@ export interface InsightArticle {
   slug: string;
   title: string;
   excerpt: string;
-  category: 'Marketing' | 'Technology' | 'Business Growth' | 'AI & Automation' | 'Branding' | 'Digital Transformation';
+  category: 'Growth' | 'Technology' | 'Industry' | 'SGS Insights' | string;
   author: {
     name: string;
     role: string;

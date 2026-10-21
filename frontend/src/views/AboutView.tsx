@@ -74,17 +74,17 @@ export const AboutView: React.FC<AboutViewProps> = ({
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold tracking-tight text-white leading-[1.08]">
                 More Than a Service Provider. <br />
                 <span className="text-[#AFEB00]">
-                  A Sovereign Growth Partner.
+                  A Business Growth &amp; Technology Partner.
                 </span>
               </h1>
 
               <p className="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
-                Sanskar Growth Solutions is a modern Indian company that brings together strategic intelligence, technology, performance acquisition, brand creative, and business media to help enterprises achieve durable, compounding market advantage.
+                Sanskar Growth Solutions is a Business Growth &amp; Technology Partner that brings together strategic intelligence, technology, performance acquisition, brand creative, and business systems to help ambitious businesses achieve sustainable market advantage.
               </p>
 
               <div className="font-heading text-lg sm:text-xl text-slate-200 font-bold tracking-tight flex items-center gap-2">
                 <span className="h-0.5 w-6 bg-[#2033FF]" />
-                <span>Built for Sovereign Business Scale</span>
+                <span>Built for Sustainable Business Growth</span>
               </div>
 
               <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -92,7 +92,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
                   onClick={onOpenProjectModal}
                   className="px-8 py-3.5 rounded-xl bg-[#AFEB00] hover:bg-[#9CD100] text-[#0F1B64] text-xs sm:text-sm font-bold flex items-center gap-2 shadow-lg shadow-[#AFEB00]/25 transition-all hover:-translate-y-0.5"
                 >
-                  <span>Start a Conversation</span>
+                  <span>Start a Growth Conversation</span>
                   <ArrowRight size={15} />
                 </button>
 
@@ -100,7 +100,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
                   onClick={onOpenDiagnostic}
                   className="px-6 py-3 rounded-xl bg-[#0F1B64] hover:bg-[#2033FF] text-white border border-white/20 text-xs sm:text-sm font-bold transition-all"
                 >
-                  60s Growth Diagnostic
+                  Take the Growth Diagnostic
                 </button>
               </div>
             </motion.div>
@@ -146,19 +146,19 @@ export const AboutView: React.FC<AboutViewProps> = ({
           <div className="mt-10 pt-6 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6">
             <div>
               <div className="text-2xl sm:text-3xl font-heading font-bold text-white">Pune HQ</div>
-              <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">Global Footprint</div>
+              <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">Working Across India &amp; Global</div>
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-heading font-bold text-[#AFEB00]">5 Disciplines</div>
-              <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">One Unified Team</div>
+              <div className="text-2xl sm:text-3xl font-heading font-bold text-[#AFEB00]">4 Core Levers</div>
+              <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">Strategy • Tech • Growth • Automation</div>
             </div>
             <div>
               <div className="text-2xl sm:text-3xl font-heading font-bold text-white">100% Owned</div>
-              <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">Client IP Sovereignty</div>
+              <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">Complete Client IP Ownership</div>
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-heading font-bold text-[#AFEB00]">24h SLA</div>
-              <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">Partner Direct Access</div>
+              <div className="text-2xl sm:text-3xl font-heading font-bold text-[#AFEB00]">Direct Access</div>
+              <div className="text-xs text-slate-400 mt-1 uppercase tracking-wider font-mono">Senior Partner Accountability</div>
             </div>
           </div>
 
@@ -166,27 +166,30 @@ export const AboutView: React.FC<AboutViewProps> = ({
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-          02. PURPOSE & VISION (CLOUD SECTION FOR HIGH CONTRAST PRESTIGE)
+          02. PURPOSE & WHY SGS EXISTS
       ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="py-14 sm:py-20 bg-[#F5FAFF] text-[#141414] border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-12">
             <div className="lg:col-span-6 space-y-4 sm:space-y-5">
               <div className="flex items-center gap-2">
                 <span className="h-[2px] w-6 bg-[#2033FF]" />
                 <span className="text-xs font-bold uppercase tracking-wider text-[#2033FF] font-mono">
-                  WHO WE ARE
+                  WHY SGS EXISTS
                 </span>
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-heading font-bold text-[#141414] tracking-tight leading-[1.1]">
-                A Digital Transformation &amp; Growth Partner.
+                Connecting Strategy, Technology &amp; Growth as One System.
               </h2>
               <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-sans">
-                We are neither a conventional marketing agency selling vanity impressions, nor a distant IT vendor writing code in isolation.
+                Businesses today often work with multiple disconnected vendors for marketing, technology, branding and business development.
               </p>
               <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-sans">
-                SGS acts as an embedded growth partner for ambitious founders, SME owners, and enterprise leaders. We align market research, brand positioning, high-intent advertising, custom web architecture, and CRM automation directly with top-line commercial revenue.
+                SGS was built around a different approach: bringing these capabilities together so that strategy, execution, technology and growth work as one system.
+              </p>
+              <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-sans font-medium">
+                Our objective is simple — help businesses attract the right opportunities, convert them more effectively and build systems that support long-term growth.
               </p>
             </div>
 
@@ -200,7 +203,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
                   <h3 className="text-xl font-heading font-bold text-[#141414]">Our Purpose</h3>
                 </div>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  To empower Indian and global enterprises with intelligent growth systems that create sovereign value for a stronger, more prosperous business ecosystem.
+                  To empower ambitious Indian and global businesses with technology-driven growth systems that create durable, measurable commercial value.
                 </p>
               </div>
 
@@ -213,7 +216,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
                   <h3 className="text-xl font-heading font-bold text-[#141414]">Our Vision</h3>
                 </div>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  To be India's most trusted growth partner across key industries, combining strategic intelligence, engineering craft and brand authority to build businesses that matter.
+                  To be India's most trusted business growth &amp; technology partner across real estate, interiors, manufacturing, and growing businesses — combining strategic intelligence, engineering craft, and brand authority.
                 </p>
               </div>
             </div>
@@ -235,9 +238,9 @@ export const AboutView: React.FC<AboutViewProps> = ({
 
               <div className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
                 <div className="text-xs font-mono font-bold text-[#2033FF]">02</div>
-                <h4 className="text-lg font-heading font-bold text-[#141414]">Craft Meets Velocity</h4>
+                <h4 className="text-lg font-heading font-bold text-[#141414]">Craft Meets Commercial Impact</h4>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  We obsess over clean code, sub-second load times, and typographic perfection, but we always judge success by enterprise EBITDA and sales velocity.
+                  We obsess over clean code, sub-second load times, and typographic perfection, but we always judge success by business revenue and sales velocity.
                 </p>
               </div>
 
@@ -245,7 +248,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
                 <div className="text-xs font-mono font-bold text-[#2033FF]">03</div>
                 <h4 className="text-lg font-heading font-bold text-[#141414]">Unified Operating Layer</h4>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  When ads, websites, CRMs, and brand media operate from a single unified architecture, CAC drops and customer lifetime value multiplies.
+                  When ads, websites, CRMs, and brand media operate from a single unified architecture, customer acquisition costs drop and lifetime value multiplies.
                 </p>
               </div>
             </div>
@@ -255,9 +258,56 @@ export const AboutView: React.FC<AboutViewProps> = ({
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-          03. 5-PHASE APPROACH (CRISP WHITE ARCHITECTURAL SPREAD)
+          03. LEADERSHIP (FOUNDER SPOTLIGHT)
       ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="py-14 sm:py-20 bg-white border-b border-slate-200 text-[#141414]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="h-[2px] w-6 bg-[#2033FF]" />
+            <span className="text-xs font-bold uppercase tracking-wider text-[#2033FF] font-mono">
+              LEADERSHIP
+            </span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-heading font-bold text-[#141414] tracking-tight leading-[1.1] mb-8">
+            Built by Practitioners. Led by Vision.
+          </h2>
+
+          <div className="p-8 sm:p-10 rounded-2xl bg-[#F5FAFF] border border-slate-200 max-w-4xl">
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-2xl font-heading font-bold text-[#141414]">
+                  Rahul Jadhav
+                </h3>
+                <p className="text-sm font-mono font-semibold text-[#2033FF] mt-0.5">
+                  Founder &amp; Director, Sanskar Growth Solutions
+                </p>
+              </div>
+
+              <div className="space-y-3 text-slate-700 text-sm sm:text-base leading-relaxed">
+                <p>
+                  Rahul Jadhav founded Sanskar Growth Solutions with a focus on helping businesses connect growth strategy, technology and execution under one operating partner.
+                </p>
+                <p>
+                  With experience across business development, magazine/media sales, digital initiatives and technology-led projects, Rahul's focus is to build SGS as a practical growth partner for ambitious businesses.
+                </p>
+              </div>
+
+              <div className="pt-2 flex items-center gap-4 text-xs font-mono text-slate-500">
+                <span className="inline-flex items-center gap-1.5 font-semibold text-[#0F1B64]">
+                  Pune, India
+                </span>
+                <span>•</span>
+                <span>Business Growth &amp; Technology Leadership</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════════════
+          04. 5-PHASE APPROACH (CRISP WHITE ARCHITECTURAL SPREAD)
+      ═══════════════════════════════════════════════════════════════════════════ */}
+      <section className="py-14 sm:py-20 bg-[#F8FAFC] border-b border-slate-200 text-[#141414]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 sm:mb-10">
@@ -280,7 +330,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
             {approachSteps.map((step) => {
               const Icon = step.icon;
               return (
-                <div key={step.num} className="p-5 rounded-2xl bg-[#F5FAFF] border border-slate-200 space-y-3 hover:border-[#0F1B64] transition-all shadow-sm">
+                <div key={step.num} className="p-5 rounded-2xl bg-white border border-slate-200 space-y-3 hover:border-[#0F1B64] transition-all shadow-sm">
                   <div className="w-8 h-8 rounded-xl bg-[#0F1B64] text-[#AFEB00] flex items-center justify-center">
                     <Icon size={16} />
                   </div>
@@ -304,7 +354,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════════════
-          04. CINEMATIC SUMMIT BOTTOM CTA BANNER
+          05. CINEMATIC SUMMIT BOTTOM CTA BANNER
       ═══════════════════════════════════════════════════════════════════════════ */}
       <section className="relative py-16 sm:py-22 bg-[#0F1B64] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -322,11 +372,11 @@ export const AboutView: React.FC<AboutViewProps> = ({
           </div>
 
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-bold tracking-tight text-white max-w-3xl mx-auto leading-[1.08]">
-            Partner with Us to Build a Sovereign Growth Engine.
+            Partner with Us to Build a Business Growth Engine.
           </h2>
 
           <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
-            Let's evaluate your commercial bottlenecks and engineer a bespoke system built for compounding market scale.
+            Let's evaluate your commercial bottlenecks and engineer a system built for scalable growth.
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -334,7 +384,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
               onClick={onOpenProjectModal}
               className="px-9 py-4 rounded-xl bg-[#AFEB00] hover:bg-[#9CD100] text-[#0F1B64] text-xs sm:text-sm font-bold flex items-center gap-2 shadow-xl shadow-[#AFEB00]/25 transition-transform hover:-translate-y-0.5"
             >
-              <span>Start a Conversation</span>
+              <span>Start a Growth Conversation</span>
               <ArrowRight size={15} />
             </button>
           </div>
